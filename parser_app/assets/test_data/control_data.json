@@ -1,0 +1,191 @@
+{
+    "data": {
+        "getAllDiscountsByCustomer": {
+            "message": "Успешно!",
+            "clp": [
+                {
+                    "uuid": "3ee15220-560a-43c7-8f74-b9c7d8984b98",
+                    "description": "Заряд 80",
+                    "customers": [
+                        {
+                            "phoneNumber": "79189709990",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        }
+                    ]
+                },
+                {
+                    "uuid": "462d6411-a915-4dab-a736-5cc9da0caf17",
+                    "description": "Тариф ООО «ПКИ»",
+                    "customers": [
+                        {
+                            "phoneNumber": "79615101551",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79280061067",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79892723167",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79284665009",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79064836851",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79284665009",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79064836851",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79298336826",
+                            "isOn": false
+                        }
+                    ]
+                },
+                {
+                    "uuid": "741ee26a-1a67-4d66-b4b1-ce57fd263fc8",
+                    "description": "Заряд 120",
+                    "customers": [
+                        {
+                            "phoneNumber": "79777777777",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79186997995",
+                            "isOn": false
+                        },
+                        {
+                            "phoneNumber": "79891405957",
+                            "isOn": true
+                        },
+                        {
+                            "phoneNumber": "79002356936",
+                            "isOn": false
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
