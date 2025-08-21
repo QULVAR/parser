@@ -27,7 +27,7 @@ class EnrollCategoryState extends State<EnrollCategory> {
       width: 370.w,
       decoration: BoxDecoration(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.sp),
         border: BoxBorder.all(width: 2, color: Colors.black),
       ),
       margin: EdgeInsets.only(top: 5.h),
@@ -40,7 +40,13 @@ class EnrollCategoryState extends State<EnrollCategory> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(widget.category['category']),
+                Text(
+                  widget.category['category'],
+                  style: TextStyle(
+                    fontSize: 18.sp,
+                    color: const Color.fromARGB(255, 22, 101, 165)
+                  ),
+                ),
                 SvgPicture.asset(
                   rolled
                       ? "assets/icons/arrow_up.svg"
@@ -54,12 +60,12 @@ class EnrollCategoryState extends State<EnrollCategory> {
           ),
           rolled
               ? Container(
-                  margin: EdgeInsets.only(left: 20),
+                  margin: EdgeInsets.only(left: 10.w),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: widget.category["items"]!.map<Widget>((item) {
-                      return EnrollCategoryField(item: item['item']);
+                      return EnrollCategoryField(item: item);
                     }).toList(),
                   ),
                 )

@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.conf import settings
 from datetime import datetime as dt
+from rapidfuzz import process, fuzz
+import unicodedata
 import pandas as pd
 import os
 
@@ -48,7 +50,7 @@ def get_dict_from_file():
     return categories
     
     
-def get_goods(request):
+def get_goods(request, flag = True):
     dict_from_file = get_dict_from_file()
     keys = list(dict_from_file.keys())
     l = 0
@@ -64,8 +66,61 @@ def get_goods(request):
             l = max(l, len(j))
             result['data'][-1]['items'][-1]['price'] = dict_from_file[i][j]
     result['len'] = l
-    return JsonResponse(result)
+    if flag:
+        return JsonResponse(result)
+    else:
+        return result
     
+
+def normalize(s: str) -> str:
+    s = unicodedata.normalize('NFKD', s)
+    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+    return s.casefold().strip()
+    
+    
+def get_catalog():
+    dict_file = get_dict_from_file()
+    dict_keys = list(dict_file.keys())
+    catalog = [i + ' (category)' for i in dict_keys]
+    for i in dict_keys:
+        catalog.extend(list(dict_file[i].keys()))
+    return catalog
+
+
+def search(query: str, score_cutoff: int = 65):
+    q = normalize(query)
+    results = process.extract(
+        q,
+        get_catalog(),
+        scorer=fuzz.token_set_ratio,
+        processor=normalize,
+        score_cutoff=score_cutoff,
+        limit=None
+    )
+    data = get_goods(None, False)['data']
+    results = [m for m, _, _ in results]
+    for i in range(0, len(data)):
+        if not data[i]['category'] + ' (category)' in results:
+            j = 0
+            while j < len(data[i]['items']):
+                if not data[i]['items'][j]['item'] in results:
+                    del data[i]['items'][j]
+                else:
+                    j += 1
+    i = 0
+    while i < len(data):
+        if data[i]['items'] == []:
+            del data[i]
+        else:
+            i += 1
+    return data
+
+
+def get_by_search(request):
+    query = request.GET.get('query', '')
+    return JsonResponse({'data': search(query)})
+    
+
 
 def get_sum(request):
     date_str = '02-07-2025'

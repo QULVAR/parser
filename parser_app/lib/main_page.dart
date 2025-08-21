@@ -16,19 +16,58 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   late double _top;
   String _text = "Загружаю...";
-  late final data;
+  late dynamic data;
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     _top = widget.top;
-    fetchData();
+    _searchController.addListener(() {
+      String searchInput = _searchController.text;
+      if (searchInput.isNotEmpty) {
+        fetchSearchData(searchInput);
+      } else {
+        fetchData();
+      }
+    });
   }
 
   Future<void> fetchData() async {
+    setState(() {
+      _text = "Загружаю...";
+      data = [];
+    });
     try {
       final resp = await http.get(
         Uri.parse("http://127.0.0.1:8000/get_goods/"),
+      );
+      if (resp.statusCode == 200) {
+        final dataLocal = jsonDecode(resp.body);
+        setState(() {
+          data = dataLocal;
+          _text = '';
+        });
+      } else {
+        setState(() {
+          _text = "Ошибка: ${resp.statusCode}";
+          data = {};
+        });
+      }
+    } catch (e) {
+      setState(() => _text = "Исключение: $e");
+      data = {};
+    }
+  }
+
+  Future<void> fetchSearchData(String query) async {
+    setState(() {
+      _text = "Загружаю...";
+      data = [];
+    });
+    try {
+      final resp = await http.get(
+        Uri.parse("http://127.0.0.1:8000/search?query=$query"),
       );
       if (resp.statusCode == 200) {
         final dataLocal = jsonDecode(resp.body);
@@ -56,7 +95,6 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print(844.h);
     return Stack(
       children: [
         AnimatedPositioned(
@@ -68,7 +106,20 @@ class HomePageState extends State<HomePage> {
             width: 390.w,
             height: 844.h,
             child: Scaffold(
-              body: SingleChildScrollView(
+              body: Column(
+                children: [
+                  TextField(
+                    keyboardType: TextInputType.number,
+                    controller: _searchController,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      isCollapsed: true,
+                      contentPadding: EdgeInsets.only(bottom: 0),
+                      hintText: 'Sony',
+                      hintFadeDuration: Duration(milliseconds: 300)
+                    ),
+                  ),
+                  SingleChildScrollView(
                 child: Container(
                   margin: EdgeInsets.only(
                     top: 10.h,
@@ -85,6 +136,7 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+                ])
             ),
           ),
         ),
