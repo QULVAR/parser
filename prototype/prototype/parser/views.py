@@ -51,6 +51,7 @@ def get_dict_from_file():
 def get_goods(request):
     dict_from_file = get_dict_from_file()
     keys = list(dict_from_file.keys())
+    l = 0
     result = {'data': []}
     for i in keys:
         result['data'].append({})
@@ -60,7 +61,9 @@ def get_goods(request):
         for j in keys_items:
             result['data'][-1]['items'].append({})
             result['data'][-1]['items'][-1]['item'] = j
+            l = max(l, len(j))
             result['data'][-1]['items'][-1]['price'] = dict_from_file[i][j]
+    result['len'] = l
     return JsonResponse(result)
     
 

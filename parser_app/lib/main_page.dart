@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
+import 'enroll_category.dart';
 
 class HomePage extends StatefulWidget {
   final VoidCallback logout;
@@ -26,7 +27,9 @@ class HomePageState extends State<HomePage> {
 
   Future<void> fetchData() async {
     try {
-      final resp = await http.get(Uri.parse("http://127.0.0.1:8000/get_goods/"));
+      final resp = await http.get(
+        Uri.parse("http://127.0.0.1:8000/get_goods/"),
+      );
       if (resp.statusCode == 200) {
         final dataLocal = jsonDecode(resp.body);
         setState(() {
@@ -45,9 +48,7 @@ class HomePageState extends State<HomePage> {
     }
   }
 
-  void clear() {
-
-  }
+  void clear() {}
 
   void moveToY(double top) {
     setState(() => _top = top);
@@ -55,6 +56,7 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print(844.h);
     return Stack(
       children: [
         AnimatedPositioned(
@@ -64,46 +66,24 @@ class HomePageState extends State<HomePage> {
           left: 0,
           child: SizedBox(
             width: 390.w,
-            height: 20000,
+            height: 844.h,
             child: Scaffold(
-              body: Column(
-                children: _text != ''
-                ? [
-                  Text(
-                    _text
-                  )
-                ]
-                : data["data"]!.map<Widget>((category) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          category['category']
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: category["items"]!.map<Widget>((item) {
-                                return Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      item['item']
-                                    )
-                                  ],
-                                );
-                              }
-                            ).toList(),
-                          )
-                        )
-                      ],
-                    );
-                  }
-                ).toList(),
+              body: SingleChildScrollView(
+                child: Container(
+                  margin: EdgeInsets.only(
+                    top: 10.h,
+                    bottom: 10.h,
+                    right: 10.w,
+                    left: 10.w,
+                  ),
+                  child: Column(
+                    children: _text == ''
+                        ? data["data"]!.map<Widget>((category) {
+                            return EnrollCategory(category: category);
+                          }).toList()
+                        : [Text(_text)],
+                  ),
+                ),
               ),
             ),
           ),

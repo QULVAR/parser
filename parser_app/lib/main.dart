@@ -9,9 +9,7 @@ import 'main_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(const MyApp());
 }
@@ -24,8 +22,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-  bool _authorized = true;                                                    //authorized
+  bool _authorized = true; //authorized
   final _loginPageKey = GlobalKey<LoginPageState>();
   final _homePageKey = GlobalKey<HomePageState>();
 
@@ -35,8 +32,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _pages = [
-      HomePage(key: _homePageKey, top: 844, logout: _logout,),
-      LoginPage(key: _loginPageKey, authorize: authorize)
+      HomePage(key: _homePageKey, top: 844, logout: _logout),
+      LoginPage(key: _loginPageKey, authorize: authorize),
     ];
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -55,7 +52,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void authorize (String email, String password) {
+  void authorize(String email, String password) {
     FocusScope.of(context).unfocus();
     bool authorized = checkAuthorize(email, password);
     if (authorized) {
@@ -85,9 +82,7 @@ class _MyAppState extends State<MyApp> {
     return Container(
       width: 390.w,
       height: 844.h,
-      decoration: BoxDecoration(
-        color: Colors.white
-      ),
+      decoration: BoxDecoration(color: Colors.white),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         builder: (context, child) {
@@ -101,6 +96,9 @@ class _MyAppState extends State<MyApp> {
               accessibleNavigation: false,
               highContrast: false,
               invertColors: false,
+              padding: EdgeInsets.zero,
+              viewInsets: EdgeInsets.zero,
+              viewPadding: EdgeInsets.zero,
             ),
             child: child!,
           );
@@ -112,12 +110,11 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         locale: const Locale('ru'),
-        supportedLocales: const [
-          Locale('ru'),
-          Locale('en'),
-        ],
+        supportedLocales: const [Locale('ru'), Locale('en')],
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(95, 255, 255, 255)),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(95, 255, 255, 255),
+          ),
           useMaterial3: true,
           appBarTheme: AppBarTheme(
             elevation: 0,
@@ -128,7 +125,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         home: Stack(children: _pages),
-      )
+      ),
     );
   }
 }
