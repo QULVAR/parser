@@ -87,12 +87,12 @@ def get_catalog():
     return catalog
 
 
-def search(query: str, score_cutoff: int = 65):
+def search(query: str, score_cutoff: int = 80):
     q = normalize(query)
     results = process.extract(
         q,
         get_catalog(),
-        scorer=fuzz.token_set_ratio,
+        scorer=fuzz.partial_token_set_ratio,
         processor=normalize,
         score_cutoff=score_cutoff,
         limit=None

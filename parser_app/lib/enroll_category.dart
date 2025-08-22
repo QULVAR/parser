@@ -4,72 +4,118 @@ import 'package:pki_frontend_app/resizer.dart';
 import 'enroll_category_field.dart';
 
 class EnrollCategory extends StatefulWidget {
-  final category;
-
+  final Map<String, dynamic> category;
   const EnrollCategory({super.key, required this.category});
 
   @override
-  State<EnrollCategory> createState() => EnrollCategoryState();
+  State<EnrollCategory> createState() => _EnrollCategoryState();
 }
 
-class EnrollCategoryState extends State<EnrollCategory> {
+class _EnrollCategoryState extends State<EnrollCategory>
+    with AutomaticKeepAliveClientMixin {
   bool rolled = false;
+  double _fontSize = 18.sp;
 
-  void changeSize() {
+  void _recalcMetrics() {
+    double localFontSize = 19;
+    double localTextWidth;
+    do {
+      localFontSize -= 1;
+      final style = TextStyle(
+        fontSize: localFontSize.sp,
+        color: Color.fromARGB(255, 22, 101, 165),
+      );
+
+      final text = widget.category['category'];
+      final tp = TextPainter(
+        text: TextSpan(text: text, style: style),
+        textDirection: TextDirection.ltr,
+        maxLines: 1,
+      )..layout(minWidth: 0, maxWidth: double.infinity);
+      localTextWidth = tp.size.width;
+    } while (localTextWidth > 349.w - 24.sp);
     setState(() {
-      rolled = !rolled;
+      _fontSize = localFontSize;
     });
   }
 
+  void _toggle() => setState(() => rolled = !rolled);
+
+  @override
+  void initState() {
+    super.initState();
+    _recalcMetrics();
+  }
+
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container(
       width: 370.w,
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(10.sp),
-        border: BoxBorder.all(width: 2, color: Colors.black),
-      ),
       margin: EdgeInsets.only(top: 5.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.sp),
+        border: Border.all(width: 2, color: Colors.black),
+      ),
       child: Column(
         children: [
           TextButton(
-            onPressed: changeSize,
-            style: ButtonStyle(splashFactory: null, shadowColor: null),
+            onPressed: _toggle,
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+              overlayColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+            ),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  widget.category['category'],
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    color: const Color.fromARGB(255, 22, 101, 165)
+                Expanded(
+                  child: Text(
+                    widget.category['category'],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: _fontSize.sp,
+                      color: Color.fromARGB(255, 22, 101, 165),
+                    ),
                   ),
                 ),
-                SvgPicture.asset(
-                  rolled
-                      ? "assets/icons/arrow_up.svg"
-                      : "assets/icons/arrow_down.svg",
-                  key: ValueKey(rolled),
-                  width: 24.sp,
-                  height: 24.sp,
+                AnimatedRotation(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                  turns: rolled ? 0.5 : 0.0,
+                  child: SvgPicture.asset(
+                    "assets/icons/arrow_down.svg",
+                    width: 24.sp,
+                    height: 24.sp,
+                  ),
                 ),
               ],
             ),
           ),
-          rolled
-              ? Container(
-                  margin: EdgeInsets.only(left: 10.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: widget.category["items"]!.map<Widget>((item) {
-                      return EnrollCategoryField(item: item);
-                    }).toList(),
-                  ),
-                )
-              : SizedBox(),
+          ClipRect(
+            child: TweenAnimationBuilder<double>(
+              duration: const Duration(milliseconds: 250),
+              curve: Curves.easeInOut,
+              tween: Tween(begin: rolled ? 1 : 0, end: rolled ? 1 : 0),
+              builder: (context, value, child) => Align(
+                alignment: Alignment.topCenter,
+                heightFactor: value,
+                child: child,
+              ),
+              child: Container(
+                margin: EdgeInsets.only(left: 10.w, bottom: 8.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: (widget.category['items'] as List)
+                      .map<Widget>((item) => EnrollCategoryField(item: item))
+                      .toList(),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

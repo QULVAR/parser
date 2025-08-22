@@ -28,84 +28,88 @@ class EnrollCategoryFieldState extends State<EnrollCategoryField> {
         children: [
           Text(
             widget.item['item'],
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.black
-            ),
+            style: TextStyle(fontSize: 14.sp, color: Colors.black),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Суточный тариф (Цена за 24 часа)',
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  color: Colors.grey
-                ),
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Суточный тариф (Цена за 24 часа)',
+                        style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      ),
+                      Text(
+                        '${widget.item['price'][0]} ₽',
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Color.fromARGB(255, 99, 99, 99),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Недельный',
+                        style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      ),
+                      Text(
+                        '${widget.item['price'][1]} ₽',
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Color.fromARGB(255, 99, 99, 99),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'С Чт 17.00 до Пн 12.00',
+                        style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      ),
+                      Text(
+                        '${widget.item['price'][2]} ₽',
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Color.fromARGB(255, 99, 99, 99),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'С Пт 17.00 до Пн 12.00',
+                        style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      ),
+                      Text(
+                        '${widget.item['price'][3]} ₽',
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Color.fromARGB(255, 99, 99, 99),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              Text(
-                'Недельный',
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  color: Colors.grey
-                ),
-              ),
-              Text(
-                'С Чт 17.00 до Пн 12.00',
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  color: Colors.grey
-                ),
-              ),
-              Text(
-                'С Пт 17.00 до Пн 12.00',
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  color: Colors.grey
-                ),
-              )
-            ]),
-            SizedBox(width: 5.w,),
-            Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${widget.item['price'][0]} ₽',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  color: Color.fromARGB(255, 99, 99, 99)
-                ),
-              ),
-              Text(
-                '${widget.item['price'][1]} ₽',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  color: Color.fromARGB(255, 99, 99, 99)
-                ),
-              ),
-              Text(
-                '${widget.item['price'][2]} ₽',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  color: Color.fromARGB(255, 99, 99, 99)
-                ),
-              ),
-              Text(
-                '${widget.item['price'][3]} ₽',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  color: Color.fromARGB(255, 99, 99, 99)
-                ),
-              )
-            ])
             ],
-          )
+          ),
         ],
       ),
     );
