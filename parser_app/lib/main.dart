@@ -22,7 +22,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _authorized = true; //authorized
+  bool _authorized = false; //authorized
   final _loginPageKey = GlobalKey<LoginPageState>();
   final _homePageKey = GlobalKey<HomePageState>();
 

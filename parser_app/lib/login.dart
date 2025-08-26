@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'resizer.dart';
-import 'text_styles.dart';
 
 
 import 'login_form.dart';
@@ -64,16 +63,13 @@ class LoginPageState extends State<LoginPage> {
                         children: [
                           SizedBox(height: 179.h),
                           SizedBox(height: 12.h),
-                          Text(
-                            'Личный кабинет для юр. лиц',
-                            textAlign: TextAlign.center,
-                            style: AppText.loginHeader
-                          ),
                           SizedBox(height: 151.h),
-                          LoginForm(
+                          Center(
+                            child: LoginForm(
                             key: _loginPageFormKey,
                             authorize: widget.authorize
                           ),
+                          )
                         ]
                       )
                     ]

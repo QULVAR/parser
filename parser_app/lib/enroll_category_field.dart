@@ -183,7 +183,8 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField>
             constraints: const BoxConstraints(),
             icon: Lottie.asset(
               'assets/animations/checkbox.json',
-              height: 32.sp,
+              height: 25.h,
+              width: 50.w,
               controller: _c,
               animate: false,
               repeat: false,

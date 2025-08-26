@@ -6,7 +6,6 @@ double kW = 1.0, kH = 1.0, s = 1.0;
 void initScale(BuildContext context) {
   final mq = MediaQuery.of(context);
   final size = mq.size;
-  print(size.height);
   kW = size.width / 390.0;
   kH = size.height / 844.0;
   s = math.min(kW, kH);
