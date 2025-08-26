@@ -110,7 +110,12 @@ class _EnrollCategoryState extends State<EnrollCategory>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: (widget.category['items'] as List)
-                      .map<Widget>((item) => EnrollCategoryField(item: item))
+                      .map<Widget>(
+                        (item) => EnrollCategoryField(
+                          item: item,
+                          category: widget.category['category'],
+                        ),
+                      )
                       .toList(),
                 ),
               ),

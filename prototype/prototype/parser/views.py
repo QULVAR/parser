@@ -6,6 +6,43 @@ from rapidfuzz import process, fuzz
 import unicodedata
 import pandas as pd
 import os
+import json
+
+CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
+
+def read_file_goods():
+    file_path = os.path.join(CACHE_DIR, "data.json")
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+    
+def read_file_catalog():
+    file_path = os.path.join(CACHE_DIR, "search.json")
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+try:
+    GOODS = read_file_goods()
+    CATALOG = read_file_catalog()['data']
+except:
+    GOODS = None
+    CATALOG = None
+
+def write_file(request):
+    global GOODS, CATALOG
+    try:
+        file_path = os.path.join(CACHE_DIR, "data.json")
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(get_goods(request, False), f, ensure_ascii=False, indent=2)
+        file_path = os.path.join(CACHE_DIR, "search.json")
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump({'data': get_catalog()}, f, ensure_ascii=False, indent=2)
+        GOODS = read_file_goods()
+        CATALOG = read_file_catalog()['data']
+        return JsonResponse({'result': 'Success'})
+    except:
+        return JsonResponse({'result': 'Error'})
+
+
 
 def get_dict_from_file():
     file_path = os.path.join(settings.BASE_DIR, 'parser', 'static', 'files', 'output.xlsx')
@@ -49,7 +86,6 @@ def get_dict_from_file():
             del categories[i]
     return categories
     
-    
 def get_goods(request, flag = True):
     dict_from_file = get_dict_from_file()
     keys = list(dict_from_file.keys())
@@ -70,6 +106,10 @@ def get_goods(request, flag = True):
         return JsonResponse(result)
     else:
         return result
+
+
+def get_cached_goods(request):
+    return JsonResponse(GOODS)
     
 
 def normalize(s: str) -> str:
@@ -91,13 +131,13 @@ def search(query: str, score_cutoff: int = 80):
     q = normalize(query)
     results = process.extract(
         q,
-        get_catalog(),
+        CATALOG,
         scorer=fuzz.partial_token_set_ratio,
         processor=normalize,
         score_cutoff=score_cutoff,
         limit=None
     )
-    data = get_goods(None, False)['data']
+    data = GOODS['data'].copy()
     results = [m for m, _, _ in results]
     for i in range(0, len(data)):
         if not data[i]['category'] + ' (category)' in results:

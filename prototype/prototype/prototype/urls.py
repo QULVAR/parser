@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from parser.views import get_sum, get_goods, get_by_search
+from parser.views import get_sum, get_cached_goods, get_by_search, write_file
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_sum),
-    path('get_goods/', get_goods),
-    path('search', get_by_search)
+    path('get_goods/', get_cached_goods),
+    path('search', get_by_search),
+    path('write_cache/', write_file)
 ]

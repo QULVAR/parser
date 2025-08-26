@@ -1,0 +1,5056 @@
+{
+  "data": [
+    {
+      "category": "Фотоаппараты",
+      "items": [
+        {
+          "item": "Sony FX30 Body",
+          "price": [
+            3000,
+            14000,
+            6000,
+            3750
+          ]
+        },
+        {
+          "item": "Sony A6500 Body",
+          "price": [
+            1200,
+            4550,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Sony A7 III Body",
+          "price": [
+            2250,
+            11200,
+            4500,
+            2810
+          ]
+        },
+        {
+          "item": "Sony A7 C Body",
+          "price": [
+            2250,
+            11200,
+            4500,
+            2810
+          ]
+        },
+        {
+          "item": "Sony A7 S III Body",
+          "price": [
+            3950,
+            21000,
+            7900,
+            4940
+          ]
+        },
+        {
+          "item": "Sony FX3 Body",
+          "price": [
+            4800,
+            24500,
+            9600,
+            6000
+          ]
+        },
+        {
+          "item": "Canon EOS C70",
+          "price": [
+            4800,
+            24500,
+            9600,
+            6000
+          ]
+        },
+        {
+          "item": "Canon EOS R6 Mark II Body",
+          "price": [
+            3500,
+            16800,
+            7000,
+            4375
+          ]
+        },
+        {
+          "item": "Canon EOS R6 Body",
+          "price": [
+            3000,
+            14000,
+            6000,
+            3750
+          ]
+        },
+        {
+          "item": "Canon EOS R Body",
+          "price": [
+            2300,
+            9100,
+            4600,
+            2875
+          ]
+        },
+        {
+          "item": "Canon EOS R8 Body",
+          "price": [
+            2200,
+            9100,
+            4400,
+            2750
+          ]
+        },
+        {
+          "item": "Canon 5D Mark III Body",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Canon 6D Body",
+          "price": [
+            950,
+            4200,
+            1900,
+            1100
+          ]
+        },
+        {
+          "item": "Nikon Z6 Raw Kit (в комплекте Nikon Z6 + FTZ Adapter + Ninja V + клетка)",
+          "price": [
+            2500,
+            12600,
+            7500,
+            5000
+          ]
+        },
+        {
+          "item": "Nikon Z6 Body + FTZ Adapter + XQD 64 Gb",
+          "price": [
+            2200,
+            10500,
+            4400,
+            2750
+          ]
+        },
+        {
+          "item": "Nikon D750 Body",
+          "price": [
+            1050,
+            4000,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Nikon D600 Body",
+          "price": [
+            800,
+            3300,
+            2400,
+            1000
+          ]
+        },
+        {
+          "item": "Panasonic GH5 Body",
+          "price": [
+            1800,
+            8400,
+            3600,
+            2250
+          ]
+        },
+        {
+          "item": "Panasonic GH4 Body",
+          "price": [
+            800,
+            3500,
+            1600,
+            1000
+          ]
+        },
+        {
+          "item": "Fujifilm X-T4 Body",
+          "price": [
+            2300,
+            9800,
+            4600,
+            2875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Фотообъективы (зумы)",
+      "items": [
+        {
+          "item": "Sony E 10-18mm F/4 OSS",
+          "price": [
+            850,
+            4200,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Sigma 10-18mm F/2.8 DC DN",
+          "price": [
+            1200,
+            5600,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Sigma 18-50mm F/2.8 DC DN",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sony E PZ 18-105mm F/4 G OSS",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Sony FE 12-24mm G F/4",
+          "price": [
+            1600,
+            6900,
+            3200,
+            2000
+          ]
+        },
+        {
+          "item": "Sony T*FE 16-35mm F/4 ZA OSS",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sony FE 16-35mm F/2.8 GM",
+          "price": [
+            1900,
+            8400,
+            3800,
+            2375
+          ]
+        },
+        {
+          "item": "Tamron 17-28mm F/2.8 Di III RXD",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Sony T*FE 24-70mm F/4 ZA OSS",
+          "price": [
+            800,
+            2500,
+            1600,
+            1000
+          ]
+        },
+        {
+          "item": "Sony FE 24-70mm F/2.8 GM",
+          "price": [
+            1850,
+            8400,
+            3700,
+            2310
+          ]
+        },
+        {
+          "item": "Sony FE 24-70mm F/2.8 GM II",
+          "price": [
+            2500,
+            10500,
+            5000,
+            3125
+          ]
+        },
+        {
+          "item": "Tamron 28-75mm F/2.8 Di III RXD",
+          "price": [
+            990,
+            4200,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Tamron 28-75mm F/2.8 Di III G2",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Sony FE PZ 28-135mm F/4 G OSS",
+          "price": [
+            2800,
+            14000,
+            5600,
+            3500
+          ]
+        },
+        {
+          "item": "Sony FE 70-200mm F/4 G ZA OSS",
+          "price": [
+            1400,
+            4900,
+            2800,
+            1750
+          ]
+        },
+        {
+          "item": "Tamron 70-180mm F/2.8 Di III VXD",
+          "price": [
+            1600,
+            6300,
+            3200,
+            2000
+          ]
+        },
+        {
+          "item": "Sony FE 70-200mm F/2.8 GM",
+          "price": [
+            2500,
+            10500,
+            5000,
+            3125
+          ]
+        },
+        {
+          "item": "Canon RF 14-35mm F/4L IS USM",
+          "price": [
+            1850,
+            7700,
+            3700,
+            2310
+          ]
+        },
+        {
+          "item": "Canon RF 24-70mm F/2.8L IS USM",
+          "price": [
+            2500,
+            10500,
+            5000,
+            3125
+          ]
+        },
+        {
+          "item": "Canon RF 24-105mm F/4L IS USM",
+          "price": [
+            1050,
+            4900,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Sigma AF 8-16mm F/4.5-5.6 DC HSM",
+          "price": [
+            1050,
+            4900,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Tokina AT-X 11-16mm F/2.8 CF",
+          "price": [
+            1050,
+            4900,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Canon EF-S 10-22mm F/3.5-4.5 USM",
+          "price": [
+            650,
+            2100,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Tokina 10-17mm F/3.5-4.5 DX",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Canon EF 16-35mm F/2.8 L II USM",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Canon EF 16-35mm F/2.8 L III USM",
+          "price": [
+            1400,
+            5600,
+            2800,
+            1750
+          ]
+        },
+        {
+          "item": "Sigma AF 18-35mm F/1.8 DC HSM",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Canon EF-S 17-55mm F/2.8 IS",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Canon EF-S 18-200mm F/3.5-5.6 IS",
+          "price": [
+            400,
+            1200,
+            900,
+            600
+          ]
+        },
+        {
+          "item": "Canon EF 24-70mm F/2.8L II USM",
+          "price": [
+            1500,
+            6900,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Canon EF 24-70mm F/4L IS USM",
+          "price": [
+            750,
+            2800,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Canon EF 24-105mm F/4L IS USM",
+          "price": [
+            650,
+            2450,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Canon EF 70-300mm F/4-5.6 IS USM ",
+          "price": [
+            850,
+            2450,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Canon EF 70-200mm F/2.8L USM",
+          "price": [
+            950,
+            3450,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Canon EF 70-200mm F/2.8L IS II USM",
+          "price": [
+            1500,
+            7700,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Nikon Nikkor Z 24-70mm F/4 S",
+          "price": [
+            1050,
+            3850,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Nikon Nikkor Z 28-75mm F/2.8",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 10-24 F/3.5-4.5 G ED",
+          "price": [
+            950,
+            3850,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 14-24mm F/2.8G ED",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 24-70mm F2.8G ED ",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 70-200 F2.8G VR II ED",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 70-300 f/4.5-5.6 G VR",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Фотообъективы (фиксы)",
+      "items": [
+        {
+          "item": "Sony E 11mm F/1.8",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sigma 16mm F/1.4 DC DN",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Sony Sonnar T*E 24mm F/1.8 ZA",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Sigma 30mm F/1.4 DC DN",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Sony E 50mm F/1.8 OSS",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Sigma 56mm F/1.4 DC DN",
+          "price": [
+            750,
+            2800,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Sigma 24mm F/1.4 ART",
+          "price": [
+            1150,
+            4200,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Sony FE 24mm F/1.4 GM",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Laowa 24mm T/14 PeriProbe PL + адаптер Sony E",
+          "price": [
+            3500,
+            14000,
+            7000,
+            4400
+          ]
+        },
+        {
+          "item": "Zeiss Batis 25mm F/2.0",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Sony FE 28mm F/2.0",
+          "price": [
+            750,
+            2800,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Sigma 35mm F/1.4 ART",
+          "price": [
+            1150,
+            4200,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Sony FE 35mm F/1.8",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sony Distagon T* FE 35mm F/1.4 ZA",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Sony FE 35mm F/1.4 GM",
+          "price": [
+            2000,
+            8400,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sony FE 50mm F/1.8",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Sigma 50mm F/1.4 ART",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sony FE 50mm F/1.4 GM",
+          "price": [
+            2000,
+            8400,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sony Sonnar T*FE 55mm F/1.8 ZA",
+          "price": [
+            950,
+            3750,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Sony FE 85mm F/1.8",
+          "price": [
+            750,
+            3150,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Sigma 85mm F/1.4 ART",
+          "price": [
+            1400,
+            6300,
+            2800,
+            1750
+          ]
+        },
+        {
+          "item": "Sony FE 85mm F/1.4 GM",
+          "price": [
+            2000,
+            8400,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sony FE 90mm F/2.8 Macro G OSS",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Sirui Saturn 35mm T2.9 1.6x",
+          "price": [
+            2000,
+            10500,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sirui Saturn 50mm T2.9 1.6x",
+          "price": [
+            2000,
+            10500,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sirui Saturn 75mm T2.9 1.6x",
+          "price": [
+            2000,
+            10500,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Canon RF 16mm F/2.8 STM",
+          "price": [
+            750,
+            2800,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Canon RF 35mm F/1.8 Macro IS STM",
+          "price": [
+            750,
+            2800,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Canon RF 50mm F/1.8 STM",
+          "price": [
+            650,
+            2450,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Canon RF 85mm F/2.0 Macro IS STM",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Canon RF 100mm F/2.8L Macro IS USM",
+          "price": [
+            2000,
+            9100,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Laowa 24mm T/14 PeriProbe PL + адаптер Canon RF",
+          "price": [
+            3500,
+            14000,
+            7000,
+            4400
+          ]
+        },
+        {
+          "item": "Canon EF 24mm F/1.4 L II USM",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Canon EF 24mm F/2.8 IS USM",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Canon EF 28mm F/2.8 IS USM",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Canon EF 35mm F/1.4L USM",
+          "price": [
+            990,
+            2800,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Canon EF 35mm F/1.4L USM II",
+          "price": [
+            1500,
+            7700,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Canon EF 50mm F/1.8 STM",
+          "price": [
+            550,
+            1750,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Canon EF 50mm F/1.2L USM",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Canon EF 50mm F/1.4 USM",
+          "price": [
+            650,
+            2100,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Canon EF 85mm F/1.8 USM",
+          "price": [
+            650,
+            2100,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Canon EF 85mm F/1.2 L II",
+          "price": [
+            990,
+            4200,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Canon EF 100mm F/2.8 L IS USM Macro",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Laowa 100mm F/2.8 CA-Dreamer Macro 2x",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Canon EF 135mm F/2.0 L USM",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Lensbaby Composer Pro Double Glass",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Laowa 24mm T/14 PeriProbe PL + адаптер Nikon Z",
+          "price": [
+            3500,
+            14000,
+            7000,
+            4400
+          ]
+        },
+        {
+          "item": "Nikon Nikkor Z 35mm F/1.8 S",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Nikon Nikkor Z 50mm F/1.8 S",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 28mm F/1.8 G N",
+          "price": [
+            650,
+            2800,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 35mm F/1.8 G FX",
+          "price": [
+            650,
+            2800,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 35mm F/1.4G",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 50mm F/1.8G",
+          "price": [
+            350,
+            1400,
+            500,
+            440
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 50mm F/1.4G",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 58mm F/1.4G N",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 85mm F/1.8G",
+          "price": [
+            650,
+            2450,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 85mm F/1.4G",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 105mm F/1.4E ED N",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Nikon Nikkor AF-S 105mm F/2.8G ED",
+          "price": [
+            1150,
+            4200,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Panasonic 30mm F/2.8 Macro ASPH O.I.S.",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Panasonic 42.5mm F/1.2 DG ASPH",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Viltrox 13mm F/1.4 STM ASPH ED IF",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Viltrox 23mm F/1.4 STM ED IF",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Viltrox 33mm F/1.4 STM ED IF",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Viltrox 56mm F/1.4 STM ED IF",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Fujifilm 60mm F/2.4 R Macro",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Вспышки",
+      "items": [
+        {
+          "item": "Sony HVL-F32M",
+          "price": [
+            350,
+            1470,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Sony HVL-F43M",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Sony HVL-F60M",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Godox V1S",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Canon Speedlite 600 EX-RT",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Canon Speedlite 580 EX II",
+          "price": [
+            450,
+            1950,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Canon Speedlite 430 EX II",
+          "price": [
+            390,
+            1750,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Canon Speedlite 320 EX",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox V1",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Godox V1C Pro",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Nikon Speedlite SB-700",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Nikon Speedlite SB-910",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Godox V1N",
+          "price": [
+            750,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Godox TT65 для Fuji",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Godox V1 для Fuji",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптеры для Sony",
+      "items": [
+        {
+          "item": "Телеконвертер Sony SEL20TC",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Viltrox EF-NEX III (автофокусный)",
+          "price": [
+            200,
+            700,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Pixco EOS-NEX III (автофокусный)",
+          "price": [
+            200,
+            700,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Sigma MC-11 EF-E (автофокусный)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Commlite ENF-E1 Nikon G to Sony E (автофокусный)",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Blackmagic Cinema Camera 6K FF",
+          "price": [
+            4800,
+            24500,
+            9600,
+            6000
+          ]
+        },
+        {
+          "item": "Blackmagic Pocket Cinema Camera 6K",
+          "price": [
+            2800,
+            14000,
+            8400,
+            5600
+          ]
+        },
+        {
+          "item": "Blackmagic Pocket Cinema Camera 4K",
+          "price": [
+            2400,
+            10500,
+            7200,
+            4800
+          ]
+        },
+        {
+          "item": "Площадка питания Blackmagic 4K/6K для аккумуляторов серии L ",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Sigma MC-21 L-EF (автофокусный)",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптеры для Canon",
+      "items": [
+        {
+          "item": "Адаптер Canon EF-EOS R",
+          "price": [
+            550,
+            1400,
+            1100,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Фобъективы (зумы)",
+      "items": [
+        {
+          "item": "Panasonic 7-14mm F/4 ASPH",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Panasonic 8-18mm F/2.8-4 ASPH",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Panasonic 12-35mm F/2.8 ASPH O.I.S.",
+          "price": [
+            950,
+            2800,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Panasonic 12-60mm F/2.8-4 ASPH",
+          "price": [
+            1200,
+            4200,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Panasonic 35-100mm F/2.8",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Panasonic 50-200mm F/2.8-4 ASPH",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Sigma 10-18mm F/2.8 DC DN",
+          "price": [
+            1200,
+            5600,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Fujifilm 16-55mm F/2.8 R LM WR",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Fujifilm 16-80mm F/4 R OIS WR",
+          "price": [
+            1050,
+            4200,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Tamron 17-70mm F/2.8 Di III-A VC RXD",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптеры для Panasonic",
+      "items": [
+        {
+          "item": "Viltrox EF-M2",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптеры",
+      "items": [
+        {
+          "item": "Fringer EF FX2 Pro II ( Canon EF – Fuji X )",
+          "price": [
+            550,
+            1400,
+            1100,
+            690,
+            "550 руб. при аренде объектива на весь срок аренды"
+          ]
+        },
+        {
+          "item": "K&F Concept Nik(G)–FX (Nikon F – Fuji X)",
+          "price": [
+            100,
+            490,
+            200,
+            130,
+            "Бесплатно при аренде объектива Nikon F"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Объективы PL",
+      "items": [
+        {
+          "item": "Laowa 24mm T14 2x Macro PeriProbe",
+          "price": [
+            3500,
+            14000,
+            7000,
+            1190
+          ]
+        },
+        {
+          "item": "Viltrox Epic Anamorphic 35mm T2.0 1.33x Cine Lens",
+          "price": [
+            4000,
+            21000,
+            8000,
+            5000
+          ]
+        },
+        {
+          "item": "Viltrox Epic Anamorphic 50mm T2.0 1.33x Cine Lens",
+          "price": [
+            4000,
+            21000,
+            8000,
+            5000
+          ]
+        },
+        {
+          "item": "Viltrox Epic Anamorphic 75mm T2.0 1.33x Cine Lens",
+          "price": [
+            4000,
+            21000,
+            8000,
+            5000
+          ]
+        },
+        {
+          "item": "Комплект Viltrox Epic Anamorphic 35/50/75mm T2.0 1.33x Cine Lens",
+          "price": [
+            10000,
+            56000,
+            20000,
+            12500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптеры для PL",
+      "items": [
+        {
+          "item": "Viltrox PL-E mount adapter ",
+          "price": [
+            550,
+            1400,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Viltrox PL-L mount adapter ",
+          "price": [
+            550,
+            1400,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Viltrox PL-Z mount adapter ",
+          "price": [
+            550,
+            1400,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Snipiz PL-RF mount adapter ",
+          "price": [
+            550,
+            1400,
+            1100,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Анаморфотные адаптеры",
+      "items": [
+        {
+          "item": "Анаморфотный адаптер Sirui 1.25x",
+          "price": [
+            1200,
+            4200,
+            2400,
+            1500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Аккумуляторы",
+      "items": [
+        {
+          "item": "Аккумулятор Canon LP-E17",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Canon LP-E6 / LP-E6N",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Canon LP-E6NH",
+          "price": [
+            450,
+            1400,
+            900,
+            560,
+            "450 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор LP-E6 для Canon",
+          "price": [
+            100,
+            490,
+            200,
+            125,
+            "100 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Nikon EN-EL15",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Sony NP-FW50",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Комплект аккумуляторов DSTE NP-FW50 (4 шт)",
+          "price": [
+            350,
+            980,
+            700,
+            440,
+            "350 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Sony NP-FZ100",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор NP-FZ100 для Sony",
+          "price": [
+            150,
+            450,
+            300,
+            180,
+            "150 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор Panasonic DMW-BLF19E для GH4/GH5",
+          "price": [
+            300,
+            980,
+            600,
+            500,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор F 570",
+          "price": [
+            100,
+            490,
+            200,
+            120
+          ]
+        },
+        {
+          "item": "Аккумулятор Fujifilm NP-W235",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор F 770",
+          "price": [
+            150,
+            630,
+            300,
+            180
+          ]
+        },
+        {
+          "item": "Аккумулятор F 970",
+          "price": [
+            200,
+            910,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Аккумулятор V-Mount 65 W/h",
+          "price": [
+            300,
+            980,
+            600,
+            375
+          ]
+        },
+        {
+          "item": "Аккумулятор V-Mount 130 W/h",
+          "price": [
+            350,
+            1400,
+            700,
+            450
+          ]
+        },
+        {
+          "item": "Аккумулятор V-Mount 190 W/h",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Аккумулятор V-Mount 300 W/h",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Зарядное устройство V-Mount на 2 аккумулятора",
+          "price": [
+            390,
+            1400,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Зарядное устройство V-Mount на 4 аккумулятора",
+          "price": [
+            650,
+            2450,
+            1300,
+            810
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Карты памяти SD",
+      "items": [
+        {
+          "item": "Карта памяти SanDisk SD Extreme Pro 64 GB, 95 Mb/s, UHS-I U3",
+          "price": [
+            200,
+            500,
+            300,
+            250,
+            "200 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Карта памяти SanDisk SD Extreme Pro 128 GB, 95 Mb/s, UHS-I U3",
+          "price": [
+            350,
+            1050,
+            700,
+            440,
+            "350 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Карта памяти Pro Grade UHS-II 256 Gb, V90, R: 300 Mb/s, W: 250 Mb/s",
+          "price": [
+            750,
+            3500,
+            1500,
+            940,
+            "750 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Карт-ридер Pro Grade USB 3.2 Gen 2.0 двойной слот для CFexpress Type-A и SDHC/SDXC UHS-II",
+          "price": [
+            250,
+            980,
+            500,
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Карты памяти CF",
+      "items": [
+        {
+          "item": "Карта памяти SanDisk Extreme CF 64 Gb, 120 Mb/s",
+          "price": [
+            350,
+            1400,
+            700,
+            440,
+            "350 руб. при аренде камеры на весь срок аренды"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Карты памяти XQD",
+      "items": [
+        {
+          "item": "Карта памяти Sony XQD 64 Gb, 400 Mb/s, G",
+          "price": [
+            250,
+            980,
+            500,
+            320,
+            "250 руб. при аренде камеры на весь срок аренды"
+          ]
+        },
+        {
+          "item": "Карта памяти Sony XQD 120 Gb, 400 Mb/s, G",
+          "price": [
+            450,
+            1800,
+            900,
+            560,
+            "450 руб. при аренде камеры на весь срок аренды"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Карты памяти CFexpress Type A",
+      "items": [
+        {
+          "item": "Карта памяти Lexar CFexpress Type A 320 GB",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Карт-ридер CFexpress Type A",
+          "price": [
+            250,
+            980,
+            500,
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Накамерные микрофоны",
+      "items": [
+        {
+          "item": "Микрофон-пушка Sennheiser MKE 400",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Микрофон-пушка Rode Videomic Pro",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Стерео-микрофон Rode Stereo Videomic Pro",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Микрофон-пушка Sennheiser MKE 600 в комплекте с адаптером под горячий башмак и Mini Jack кабелем",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Микрофоны",
+      "items": [
+        {
+          "item": "Микрофон-пушка Sennheiser MKE 600",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Микрофон-пушка Sennheiser MKH 416-P48U3",
+          "price": [
+            2000,
+            10500,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Ручной микрофон Rode Reporter",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Микрофон Rode PODMIC",
+          "price": [
+            650,
+            2100,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Микрофон Shure SM7B",
+          "price": [
+            990,
+            4550,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Пантограф ZooM ZMA 1",
+          "price": [
+            390,
+            1400,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Кабель Roland RMC-10 (XLR-XLR) 3м",
+          "price": [
+            100,
+            420,
+            200,
+            125
+          ]
+        },
+        {
+          "item": "Кабель Roland RMC-15 (XLR-XLR) 4.5м",
+          "price": [
+            200,
+            630,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель Roland RMC-25 (XLR-XLR) 7.5м",
+          "price": [
+            250,
+            770,
+            500,
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Удочки и ветрозащиты",
+      "items": [
+        {
+          "item": "Удочка Andoer (3м)",
+          "price": [
+            250,
+            630,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Держатель для удочки",
+          "price": [
+            250,
+            630,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Ветрозащита Boya BY-WS1000 для Sennheiser MKE 600 / MKH 416",
+          "price": [
+            750,
+            2100,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Ветрозащита Rycote для Sennheiser MKE 600 / MKH 416",
+          "price": [
+            1500,
+            3490,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Аудиорекордеры",
+      "items": [
+        {
+          "item": "Внешний аудиорекордер ZooM H4 Essential",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Внешний аудиорекордер ZooM H5",
+          "price": [
+            650,
+            2450,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Внешний аудиорекордер ZooM H6",
+          "price": [
+            950,
+            4200,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Внешний аудиорекордер ZooM F8",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Радиосистемы",
+      "items": [
+        {
+          "item": "Петличная радиосистема Sennheiser EW 112P G4-A",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Петличная радиосистема Sennheiser EW500 Film G4",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Микрофонная радиосистема Sennheiser EW500 Film G4 в составе приемника и передатчика Plug-ON",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Микрофонная радиосистема Sennheiser EW500 Film G4 в составе приемника и передатчика Plug-ON + микрофон Rode Reporter",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Петличная радиосистема DJI Mic",
+          "price": [
+            850,
+            3850,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Петличный микрофон DJI Lavalier",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Штативы и моноподы",
+      "items": [
+        {
+          "item": "Штатив Sirui Traveler 5CX",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Штатив Manfrotto MKELEB5BK-BH",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Штатив с трехпозиционной головой Manfrotto MT055XPRO3-MHXPRO-3W",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Штатив с шаровой головой Manfrotto MT055XPRO3-MHXPRO-BHQ2",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Ролики GreenBean TrackMaster 02",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Штатив Joby Gorillapod Focus",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Штатив Joby Gorillapod Focus + Manfrotto 494RC2",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Штатив Joby Gorillapod SLR ZooM GP3",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Монопод Manfrotto MM290A4",
+          "price": [
+            390,
+            980,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Монопод Manfrotto 679B + шаровая голова 486RC2",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Головы для штативов",
+      "items": [
+        {
+          "item": "Видеоголова Manfrotto MVH500AH",
+          "price": [
+            550,
+            1750,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Трехпозиционная голова Manfrotto MHXPRO-3W",
+          "price": [
+            550,
+            1750,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Шаровая голова Manfrotto MHXPRO-BHQ2",
+          "price": [
+            550,
+            1750,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Шаровая голова Manfrotto 494RC2",
+          "price": [
+            550,
+            1750,
+            1100,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Обвес для камер",
+      "items": [
+        {
+          "item": "Клетка SmallRig для Sony A6000/6300/6500",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 рублей при аренде камеры на срок аренды камеры"
+          ]
+        },
+        {
+          "item": "Клетка UUrig для Sony A7 III",
+          "price": [
+            300,
+            980,
+            600,
+            375,
+            "300 рублей при аренде камеры на срок аренды камеры"
+          ]
+        },
+        {
+          "item": "Клетка Tilta для Sony FX3/FX30",
+          "price": [
+            300,
+            980,
+            600,
+            375
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Электронные стедикамы",
+      "items": [
+        {
+          "item": "Электронный стедикам DJI Ronin RS 4 Pro",
+          "price": [
+            2200,
+            10500,
+            4400,
+            2750
+          ]
+        },
+        {
+          "item": "Электронный стедикам DJI Ronin RS 2",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Электронный стедикам DJI Ronin RS 3",
+          "price": [
+            1400,
+            6300,
+            2850,
+            1750
+          ]
+        },
+        {
+          "item": "Электронный стедикам Zhiyun Crane 2",
+          "price": [
+            850,
+            2450,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "DJI Focus Pro Lidar",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "DJI Focus Pro Grip",
+          "price": [
+            1000,
+            3500,
+            2000,
+            1250
+          ]
+        },
+        {
+          "item": "DJI Focus Pro Motor",
+          "price": [
+            300,
+            980,
+            600,
+            375
+          ]
+        },
+        {
+          "item": "DJI Focus Pro Hand Unit",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Аксессуары для электронных стедикамов",
+      "items": [
+        {
+          "item": "Двойные рукоятки Zhiyun Dual Handgrip (Zhiyun Crane 2)",
+          "price": [
+            250,
+            770,
+            500,
+            310,
+            "250 рублей при аренде стедикама на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Двойные рукоятки AgimbalGear (Moza AirCross II/ Air II/ Ronin S/ Ronin SC)",
+          "price": [
+            250,
+            770,
+            500,
+            310,
+            "250 рублей при аренде стедикама на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Аккумулятор для Ronin RS 2, RS 3 Pro, RS 4 Pro (BG30)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Аккумулятор для Ronin RS 3, RS 4 (BG21)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Двуручный хват Tilta Basic Ring Grip(кольцо для Ronin RS2)",
+          "price": [
+            550,
+            2100.0,
+            1100.0,
+            690.0
+          ]
+        },
+        {
+          "item": "Площадка Tilta для установки на Ronin RS2 V-Mount батарей",
+          "price": [
+            390,
+            1400.0,
+            780.0,
+            490.0
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Риг",
+      "items": [
+        {
+          "item": "Риг",
+          "price": [
+            1500,
+            4200.0,
+            3000.0,
+            1875.0
+          ]
+        },
+        {
+          "item": "Риг Red",
+          "price": [
+            1500,
+            4200.0,
+            3000.0,
+            1875.0
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Жилеты",
+      "items": [
+        {
+          "item": "Easyrig Minimax",
+          "price": [
+            2000,
+            9100,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Readyrig ",
+          "price": [
+            2000,
+            9100,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Tilta Float System",
+          "price": [
+            2500,
+            10500,
+            5000,
+            3125
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Слайдеры",
+      "items": [
+        {
+          "item": "Слайдер GreenBean GB-SL 75",
+          "price": [
+            650,
+            1400,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Слайдер GreenBean GB-SL 120",
+          "price": [
+            850,
+            2100,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Электронный слайдер YC Onion Hot Dog 3.0 120см",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Видеоштативы",
+      "items": [
+        {
+          "item": "Штатив с видео головой Manfrotto MVKBFR-LIVE",
+          "price": [
+            550,
+            2450,
+            1100,
+            690
+          ]
+        },
+        {
+          "item": "Штатив с видео головой Manfrotto MT055XPRO3-MVH500AH",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Видеоштатив Manfrotto 546 GBK, 504 HD",
+          "price": [
+            1200,
+            4200,
+            2400,
+            1500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Видеомоноподы",
+      "items": [
+        {
+          "item": "Видеомонопод Manfrotto MVM500A",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Автогрип",
+      "items": [
+        {
+          "item": "SPYDER POD",
+          "price": [
+            1150,
+            4900,
+            2300,
+            1440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Телесуфлеры",
+      "items": [
+        {
+          "item": "Телесуфлер PIXAERO MOBUS",
+          "price": [
+            650,
+            1400,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Телесуфлер Teleprompter Tablet (в комплекте с iPad)",
+          "price": [
+            1400,
+            4200,
+            2800,
+            1750
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Накамерный свет",
+      "items": [
+        {
+          "item": "Видеосвет Yongnuo YN300 Air",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Мобильный и студийный свет",
+      "items": [
+        {
+          "item": "Комплект Astera Titan Tube (8 шт)",
+          "price": [
+            10000,
+            56000,
+            20000,
+            12500
+          ]
+        },
+        {
+          "item": "Комплект Astera Helios Tube (8шт)",
+          "price": [
+            8000,
+            42000,
+            16000,
+            10000
+          ]
+        },
+        {
+          "item": "Astera Titan Tube (1 шт)",
+          "price": [
+            1500,
+            7000,
+            3000,
+            1900
+          ]
+        },
+        {
+          "item": "Соты для Astera Titan Tube",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Astera Helios Tube (1 шт)",
+          "price": [
+            1000,
+            5250,
+            2000,
+            1250
+          ]
+        },
+        {
+          "item": "Aputure Amaran T2c",
+          "price": [
+            690,
+            3500,
+            1380,
+            860
+          ]
+        },
+        {
+          "item": "Aputure Amaran T4c",
+          "price": [
+            990,
+            4200,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Соты для Astera Helios Tube",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Osterrig Saberlight WALS+",
+          "price": [
+            600,
+            2800,
+            1200,
+            750
+          ]
+        },
+        {
+          "item": "Osterrig Saberlight Solaris",
+          "price": [
+            800,
+            3500,
+            1600,
+            1000
+          ]
+        },
+        {
+          "item": "Видеосвет Nanlite PavoTube II 6c",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Видеосвет Aputure Amaran AL-MC",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Видеосвет Aputure B7C",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Видеосвет Yongnuo YN-360 II",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Видеосвет Yongnuo YN-608 RGB",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Видеосвет Yongnuo YN-600 RGB",
+          "price": [
+            390,
+            1400,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Видеосвет Yongnuo YN-900 3200-5500k",
+          "price": [
+            490,
+            1750,
+            980,
+            610
+          ]
+        },
+        {
+          "item": "Видеосвет Yongnuo YN-1200 5500k",
+          "price": [
+            590,
+            2400,
+            1180,
+            740
+          ]
+        },
+        {
+          "item": "Видеосвет Aputure Amaran P60c",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Видеосвет Aputure Amaran P60x",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Источник света Aputure Amaran 60x",
+          "price": [
+            750,
+            2100,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 60x",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Источник света Godox FL150S 60x60см",
+          "price": [
+            750,
+            3500,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Источник света Godox Knowled F200 Bi 63x65см",
+          "price": [
+            1500,
+            5600,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Источник света Godox Knowled F400 Bi 62x120см",
+          "price": [
+            2200,
+            10500,
+            4400,
+            2750
+          ]
+        },
+        {
+          "item": "Источник света Godox Knowled F600 Bi 120x120см",
+          "price": [
+            3300,
+            14000,
+            6600,
+            4125
+          ]
+        },
+        {
+          "item": "Источник света Godox FL150R 30x120см",
+          "price": [
+            1200,
+            4200,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Источник света GreenBean LED 200X3 ",
+          "price": [
+            650,
+            2100,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Источник света Aputure Amaran 200x",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Источник света Aputure Amaran 300c",
+          "price": [
+            1500,
+            5600,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 300x",
+          "price": [
+            2000,
+            9800,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 300d",
+          "price": [
+            1800,
+            7700,
+            3600,
+            2250
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 600d",
+          "price": [
+            2500,
+            11200,
+            5000,
+            3125
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 600d Pro",
+          "price": [
+            3000,
+            14000,
+            6000,
+            3750
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 600x Pro",
+          "price": [
+            3500,
+            17500,
+            7000,
+            4375
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 600c Pro II",
+          "price": [
+            4000,
+            19950,
+            8000,
+            5000
+          ]
+        },
+        {
+          "item": "Источник света Aputure LS 1200D Pro",
+          "price": [
+            5000,
+            21000,
+            10000,
+            6250
+          ]
+        },
+        {
+          "item": "Источник света Aputure Amaran F22c",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Импульсный свет",
+      "items": [
+        {
+          "item": "Godox AD100",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Godox AD600BM (питание от сети)",
+          "price": [
+            1150,
+            4200,
+            2300,
+            1440
+          ]
+        },
+        {
+          "item": "Godox AD600BM (питание от сети и аккумулятора)",
+          "price": [
+            1250,
+            4900,
+            2300,
+            1560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Светоформирующие насадки",
+      "items": [
+        {
+          "item": "Зонт белый на просвет 174 см",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Зонт белый на отражение 174 см",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Зонт серебро на отражение 174 см",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Быстрораскладной софтбокс 60х90см",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной софтбокс 70х120см",
+          "price": [
+            350,
+            1190,
+            700,
+            420,
+            "350 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной стрипбокс 30х140см",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной стрипбокс 35х150см",
+          "price": [
+            350,
+            1190,
+            600,
+            375,
+            "350 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной октобокс 85см",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной параболический октобокс 120см",
+          "price": [
+            400,
+            1400,
+            800,
+            525,
+            "400 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Быстрораскладной сферический рассеиватель 65см",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Адаптер для установки софтбокса и вспышки на стойку под байонет Bowens",
+          "price": [
+            150,
+            630,
+            300,
+            190
+          ]
+        },
+        {
+          "item": "Держатель (ручка) софтбокса 62-157см",
+          "price": [
+            100,
+            350,
+            200,
+            125
+          ]
+        },
+        {
+          "item": "Софтбокс Godox FL-SF6060 для Godox FL150S",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света Godox FL150S на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Софтбокс Godox FL-SF30120 для Godox FL150R",
+          "price": [
+            300,
+            1050,
+            600,
+            375,
+            "300 рублей при аренде света Godox FL150R на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Aputure Barn Doors",
+          "price": [
+            200,
+            980,
+            400,
+            250,
+            "200 руб. на весь срок при аренде совместимого оборудования"
+          ]
+        },
+        {
+          "item": "Aputure Barn Doors F10",
+          "price": [
+            350,
+            1400,
+            700,
+            440,
+            "350 руб. на весь срок при аренде Aputure LS 600d Pro"
+          ]
+        },
+        {
+          "item": "Aputure Fresnel 2X",
+          "price": [
+            400,
+            1400,
+            800,
+            500
+          ]
+        },
+        {
+          "item": "Aputure Fresnel F10",
+          "price": [
+            600,
+            2800,
+            1200,
+            750
+          ]
+        },
+        {
+          "item": "Aputure Bowens Mount Hyper Reflrctor (комплект рефлекторов для 1200D)",
+          "price": [
+            500,
+            2100,
+            1000,
+            625
+          ]
+        },
+        {
+          "item": "Aputure Spotlight Mount 36",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Aputure 18-Leaf Iris для Spotlight Mount",
+          "price": [
+            500,
+            1400,
+            1000,
+            625
+          ]
+        },
+        {
+          "item": "Aputure Space Light",
+          "price": [
+            300,
+            980,
+            600,
+            375
+          ]
+        },
+        {
+          "item": "Aputure Lantern",
+          "price": [
+            350,
+            1190,
+            600,
+            375
+          ]
+        },
+        {
+          "item": "Aputure Lantern 90",
+          "price": [
+            400,
+            1400,
+            800,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Фрост рамы",
+      "items": [
+        {
+          "item": "Фрост рама 2.4х2.4 (8х8) разборная",
+          "price": [
+            600,
+            2100,
+            1200,
+            750.0
+          ]
+        },
+        {
+          "item": "Фрост рама 1.22х1.22 (4х4) разборная",
+          "price": [
+            450,
+            1400,
+            900,
+            560.0
+          ]
+        },
+        {
+          "item": "Фильтр Rosco White Diffusion 1/8 122x122 см (4x4)",
+          "price": [
+            200,
+            630,
+            400,
+            250.0
+          ]
+        },
+        {
+          "item": "Фильтр Rosco White Diffusion 1/4 122x122 см (4x4)",
+          "price": [
+            200,
+            630,
+            400,
+            250.0
+          ]
+        },
+        {
+          "item": "Фильтр Rosco White Diffusion 1/2 122x122 см (4x4)",
+          "price": [
+            200,
+            630,
+            400,
+            250.0
+          ]
+        },
+        {
+          "item": "Фильтр Rosco White Diffusion Full 122x122 см (4x4)",
+          "price": [
+            200,
+            630,
+            400,
+            250.0
+          ]
+        },
+        {
+          "item": "Комплект Фильтров Rosco White Diffusion Full, 1/2, 1/4, 1/8 122x122 см (4x4)",
+          "price": [
+            500,
+            1400,
+            1000,
+            625.0
+          ]
+        },
+        {
+          "item": "Пена 100х100 см серебро/белая",
+          "price": [
+            250,
+            980,
+            500,
+            310.0
+          ]
+        },
+        {
+          "item": "Флоппи 122x122 (4x4)",
+          "price": [
+            350,
+            980,
+            700,
+            440.0
+          ]
+        },
+        {
+          "item": "Соты для фрост рамы 2.4х2.4(8х8)",
+          "price": [
+            800,
+            3500,
+            1600,
+            1000.0
+          ]
+        },
+        {
+          "item": "Хромакей Movie Yeah My Key (1.8x4м)",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875.0
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Отражатели",
+      "items": [
+        {
+          "item": "Отражатель 60х90 см 5в1",
+          "price": [
+            250,
+            630,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Отражатель 71х112 см 5в1",
+          "price": [
+            290,
+            770,
+            580,
+            360
+          ]
+        },
+        {
+          "item": "Отражатель 80х120 см с ручками 5в1",
+          "price": [
+            320,
+            840,
+            640,
+            400
+          ]
+        },
+        {
+          "item": "Отражатель 90х120 см 5в1",
+          "price": [
+            350,
+            840,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Отражатель 120х180 см 5в1",
+          "price": [
+            650,
+            1400,
+            1300,
+            810
+          ]
+        },
+        {
+          "item": "Отражатель 150х200 см с ручками 5в1",
+          "price": [
+            750,
+            2100,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Держатель отражателя Avenger D705B",
+          "price": [
+            450,
+            980,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Аксессуары для предметной съёмки",
+      "items": [
+        {
+          "item": "Предметный стол Ditech STO3 50x120см",
+          "price": [
+            1050,
+            2100,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Электронный вращающийся предметный стол, 30 см",
+          "price": [
+            850,
+            2100,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Механический вращающийся предметный стол «Дяди Богдана», 40 см",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Стойки",
+      "items": [
+        {
+          "item": "Стойка W803 (2м)",
+          "price": [
+            190,
+            490,
+            380,
+            240
+          ]
+        },
+        {
+          "item": "Стойка W806 (2.8м)",
+          "price": [
+            250,
+            630,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Стойка Combo Stand 450см",
+          "price": [
+            400,
+            1400,
+            800,
+            500
+          ]
+        },
+        {
+          "item": "Хайроллер Hight Roller 580см",
+          "price": [
+            600,
+            2100,
+            1200,
+            750
+          ]
+        },
+        {
+          "item": "Стойка Kupo 483BT 3 SCT Wind Up Stand в комплекте с колёсами (максимальная высота 380см, максимальная нагрузка 30кг, вес 22.4кг)",
+          "price": [
+            1200,
+            4900,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Си-стенд Avenger C-Stand 33",
+          "price": [
+            300,
+            1400,
+            600,
+            375
+          ]
+        },
+        {
+          "item": "Си-стенд Avenger A2030DKIT-40",
+          "price": [
+            500,
+            2100,
+            1000,
+            625
+          ]
+        },
+        {
+          "item": "Avenger D600",
+          "price": [
+            450,
+            2450,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Avenger D600 + стойка 4м",
+          "price": [
+            850,
+            2850,
+            1700,
+            1060
+          ]
+        },
+        {
+          "item": "Avenger D650",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "Avenger D650 + стойка 4м",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Система установки фона Falcon Eyes B-015 (Максимальная высота 4.1м, ширина 3.84)",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Сэндбэг 10кг",
+          "price": [
+            90,
+            210,
+            180,
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Внешний видеорекордер",
+      "items": [
+        {
+          "item": "Atomos Ninja V",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Накамерный монитор",
+      "items": [
+        {
+          "item": "PortKeys BM5WR (5 дюймов, 2200nit)",
+          "price": [
+            990,
+            3500,
+            1980,
+            1250
+          ]
+        },
+        {
+          "item": "Lilliput A7S",
+          "price": [
+            450,
+            1750,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Lilliput HT7S (7 дюймов, 1920nit)",
+          "price": [
+            990,
+            3500,
+            1980,
+            1250
+          ]
+        },
+        {
+          "item": "PortKeys HS7T (7 дюймов, 1200nit)",
+          "price": [
+            1100,
+            3500,
+            2200,
+            1375
+          ]
+        },
+        {
+          "item": "Режиссёрский монитор Lilliput BM280-4KS ( 28 дюймов, 1000nit, 4к)",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Режиссёрский монитор FeelWorld WPC215 ( 21 дюйм, 1000nit, Full HD)",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Клетка для режиссёрского монитора (5-7 дюймов)",
+          "price": [
+            850,
+            3500,
+            1700,
+            1060
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Видеосендеры",
+      "items": [
+        {
+          "item": "Shimbol Tp Mini HDMI",
+          "price": [
+            500,
+            2100,
+            1000,
+            625
+          ]
+        },
+        {
+          "item": "DJI SDR",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Трансляционное оборудование",
+      "items": [
+        {
+          "item": "Трансляционный пульт Blackmagic ATEM Mini Pro",
+          "price": [
+            1400,
+            4900,
+            2800,
+            1750
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-2S (на 2 человека)",
+          "price": [
+            2000,
+            7000,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-3S (на 3 человека)",
+          "price": [
+            3000,
+            10500,
+            6000,
+            3750
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-4S (на 4 человека)",
+          "price": [
+            3500,
+            14000,
+            7000,
+            4375
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-5S (на 5 человек)",
+          "price": [
+            4000,
+            17500,
+            8000,
+            5000
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-6S (на 6 человек)",
+          "price": [
+            4500,
+            21000,
+            9000,
+            5625
+          ]
+        },
+        {
+          "item": "Интерком радиосистема Hollyland Solidcom C1 Pro-7S (на 7 человек)",
+          "price": [
+            5000,
+            24500,
+            10000,
+            6250
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Коммутация",
+      "items": [
+        {
+          "item": "D-Tap кабель для BlackMagic",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 0.5м – 4k60",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 1м – 4k60",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 2м – 4k60",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель HDMI-MicroHDMI 1м – 4k60",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 10м",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 20м",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 50м",
+          "price": [
+            750,
+            2450,
+            1500,
+            940
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 80м",
+          "price": [
+            950,
+            3150,
+            1900,
+            1190
+          ]
+        },
+        {
+          "item": "Кабель HDMI-HDMI 100м",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Кабель SDI-SDI 0.5м ",
+          "price": [
+            200,
+            980,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Кабель для передачи данных на пк (Type-C/Type-C)",
+          "price": [
+            1000,
+            2100,
+            1500,
+            1000
+          ]
+        },
+        {
+          "item": "Кабель для передачи данных на пк (Type-C/USB)",
+          "price": [
+            1000,
+            2100,
+            1500,
+            1000
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Синхронизаторы",
+      "items": [
+        {
+          "item": "Godox XProN для Nikon",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox XProC для Canon",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox XProS для Sony",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox XPro3N для Nikon",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox XPro3C для Canon",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Godox XPro3S для Sony",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Передатчик Godox X1T-S",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Передатчик Godox X1T-C",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Приемник Godox X1R-S",
+          "price": [
+            200,
+            490,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Приемник Godox X1R-C",
+          "price": [
+            200,
+            490,
+            400,
+            250
+          ]
+        },
+        {
+          "item": "Передатчик Godox X2T-F",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Передатчик Godox X2T-N",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Калибровка мониторов, принтеров, проекторов",
+      "items": [
+        {
+          "item": "Калибратор X-Rite i1 Pro2 (спектрофотометр)",
+          "price": [
+            2000,
+            4200,
+            4000,
+            2500
+          ]
+        },
+        {
+          "item": "Спектрометр Sekonic Spectromaster С700",
+          "price": [
+            2000,
+            6300,
+            4000,
+            2500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Колор чекеры",
+      "items": [
+        {
+          "item": "X-Rite Color Cheker Passport Photo 2",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "X-Rite Color Cheker Passport Video",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        },
+        {
+          "item": "X-Rite Color Cheker Video",
+          "price": [
+            1050,
+            3500,
+            2100,
+            1310
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Поляризационные светофильтры",
+      "items": [
+        {
+          "item": "Hoya PL-CIR Fusion 37mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR Fusion 40.5mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR Fusion 43mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR Fusion 46mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR Fusion 49mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 52mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 55mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 58mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 62mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 67mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 72mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 77mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Hoya PL-CIR HD NANO 82mm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Переменные нейтрально-серые светофильтры",
+      "items": [
+        {
+          "item": "Hoya Variable Density ND 3-400 52mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 55mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 58mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 62mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 67mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 72mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 77mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Hoya Variable Density ND 3-400 82mm",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Freewell 58mm ND 2-5 Stop",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell 58mm ND 6-9 Stop",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell 82mm ND 2-5 Stop",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell 82mm ND 6-9 Stop",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Смягчающие светофильтры",
+      "items": [
+        {
+          "item": "Tiffen Black Pro Mist 1/8 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Black Pro Mist 1/4 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Black Pro Mist 1/2 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Black Pro Mist 1 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Prism Lens Fx – Dream Fx 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Prism Lens Fx – Subtle Dream Fx 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Warm Black Pro Mist 1/8 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Warm Black Pro Mist 1/4 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Prism Lens FX - Nostalgia Fx Filter 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Black Pro Mist 1/8 58mm (с учетом переходников доступны диаметры 55mm, 52mm, 49mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Tiffen Black Pro Mist 1/4 58mm (с учетом переходников доступны диаметры 55mm, 52mm, 49mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Moment CineBloom Diffusion 20% 58mm (с учетом переходников доступны диаметры 55mm, 52mm, 49mm)",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Moment CineBloom Diffusion 10% 58mm (с учетом переходников доступны диаметры 55mm, 52mm, 49mm)",
+          "price": [
+            350,
+            1400,
+            700,
+            440
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Эффектные светофильтры",
+      "items": [
+        {
+          "item": "Prism Lens Fx – Split Kaleidoscope 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Prism Lens Fx – Split Subtle Kaleidoscope 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Kase Streak Blue 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Radiant FX Filter 82mm (с учетом переходников доступны диаметры 77mm, 72mm, 67mm, 62mm)",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Компендиум Tilta Matte-Box MB-T15",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Компендиум Freewell Eiger",
+      "items": [
+        {
+          "item": "Компендиум Freewell Eiger",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Светофильтры нейтрально-серые",
+      "items": [
+        {
+          "item": "Freewell Eiger IR ND 4",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger IR ND 8",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger IR ND 16",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger IR ND 32",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger IR ND 64",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger IR ND 1000",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Комплект Freewell Eiger IR ND 4, 8, 16, 32, 64, 1000",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Комплект Freewell Eiger True Color VND CPL 1-5 | 6-9 Stop",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Светофильтры смягчающие",
+      "items": [
+        {
+          "item": "Freewell Eiger Snow Mist 1.8",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Snow Mist 1.4",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Snow Mist 1.2",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Glow Mist 1.8",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Glow Mist 1.4",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Glow Mist 1.2",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Светофильтры эффектные",
+      "items": [
+        {
+          "item": "Freewell Eiger Cinemorphic Streak Blue",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Freewell Eiger Cinemorphic Streak Gold",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Светофильтры градиентные нейтрально-серые",
+      "items": [
+        {
+          "item": "Freewell Eiger Reverse Edge Gradient GND 0.9 (3 stop)",
+          "price": [
+            950,
+            3500,
+            1800,
+            1190
+          ]
+        },
+        {
+          "item": "Freewell Eiger Hard Edge Gradient GND 0.9 (3 stop)",
+          "price": [
+            950,
+            3500,
+            1800,
+            1190
+          ]
+        },
+        {
+          "item": "Freewell Eiger Soft Edge Gradient GND 0.9 (3 stop)",
+          "price": [
+            950,
+            3500,
+            1800,
+            1190
+          ]
+        },
+        {
+          "item": "Комплект Freewell Eiger Soft/Hard/Reverse Edge Gradient GND 0.9 (3 stop)",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Адаптерные кольца",
+      "items": [
+        {
+          "item": "Freewell Eiger Adapter Ring 52mm",
+          "price": [
+            50,
+            210,
+            100,
+            60
+          ]
+        },
+        {
+          "item": "Freewell Eiger Adapter Ring 55mm",
+          "price": [
+            50,
+            210,
+            100,
+            60
+          ]
+        },
+        {
+          "item": "Freewell Eiger Adapter Ring 58mm",
+          "price": [
+            50,
+            210,
+            100,
+            60
+          ]
+        },
+        {
+          "item": "Freewell Eiger Adapter Ring 62mm",
+          "price": [
+            50,
+            210,
+            100,
+            60
+          ]
+        },
+        {
+          "item": "Freewell Eiger Adapter Ring 95mm",
+          "price": [
+            50,
+            210,
+            100,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Экшн камеры и 360 ",
+      "items": [
+        {
+          "item": "GoPro 12 Black Edition (В комплекте два аккумулятора, карта 128Gb, з/у на два аккумулятора)",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "DJI Osmo Action",
+          "price": [
+            990,
+            3500,
+            1980,
+            1240
+          ]
+        },
+        {
+          "item": "Экшн-камера Insta360 ONE X2",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "DJI Osmo Pocket 3",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "DJI Osmo Pocket 3 Creator Combo",
+          "price": [
+            2000,
+            7700,
+            4000,
+            2500
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Аксессуары для экшн камер",
+      "items": [
+        {
+          "item": "Комплект Freewell VND 1-5 | 6-9 stops для DJI Osmo Pocket 3",
+          "price": [
+            450,
+            1400,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Joby Suction Cup Locking Arm (присоска)",
+          "price": [
+            250,
+            630,
+            500,
+            320,
+            "250 рублей при аренде экшн камеры на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Joby Action Clamp Locking Arm (струбцина)",
+          "price": [
+            250,
+            630,
+            500,
+            320,
+            "250 рублей при аренде экшн камеры на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Joby Action Bike Mount",
+          "price": [
+            250,
+            630,
+            500,
+            320,
+            "250 рублей при аренде экшн камеры на весь срок его аренды"
+          ]
+        },
+        {
+          "item": "Movmax Blade Arm",
+          "price": [
+            950,
+            3500,
+            1900,
+            1190
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Эффектное оборудование",
+      "items": [
+        {
+          "item": "Дым машина Falcon Eyes F-1200R",
+          "price": [
+            1200,
+            2800,
+            2400,
+            1500
+          ]
+        },
+        {
+          "item": "Дым машина Antari M1",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Крепеж",
+      "items": [
+        {
+          "item": "Avenger E600/E600C алюминиевый/ стальной штифт-адаптер для зажимов Grip Heads и Super Clamp",
+          "price": [
+            50,
+            140,
+            100,
+            75
+          ]
+        },
+        {
+          "item": "Наклонный механизм",
+          "price": [
+            150,
+            350,
+            300,
+            190
+          ]
+        },
+        {
+          "item": "Кронштейн Manfrotto 244 Micro Friction Arm",
+          "price": [
+            250,
+            980,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Кронштейн Manfrotto 244 Mini Friction Arm",
+          "price": [
+            300,
+            1400,
+            600,
+            380
+          ]
+        },
+        {
+          "item": "Кронштейн Avenger D244N Variable Friction Arm",
+          "price": [
+            450,
+            2100,
+            900,
+            560
+          ]
+        },
+        {
+          "item": "Зажим Avenger C157S Super Clamp",
+          "price": [
+            350,
+            980,
+            700,
+            440
+          ]
+        },
+        {
+          "item": "Шлем операторский Glide Gean POV100",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        },
+        {
+          "item": "Система сноррикам Glide Gean SNC100",
+          "price": [
+            1500,
+            6300,
+            3000,
+            1875
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Удлинители",
+      "items": [
+        {
+          "item": "Удлинитель 3м (3 220В, 4 USB, 1 Type-C)",
+          "price": [
+            100,
+            490,
+            200,
+            125
+          ]
+        },
+        {
+          "item": "Удлинитель IEK Industrial (10м / 4 розетки / 3500 Вт)",
+          "price": [
+            150,
+            490,
+            300,
+            190
+          ]
+        },
+        {
+          "item": "Удлинитель Schneider Electric 15м IP 20",
+          "price": [
+            190,
+            770,
+            380,
+            240
+          ]
+        },
+        {
+          "item": "Удлинитель Schneider Electric 15м IP 44",
+          "price": [
+            250,
+            980,
+            500,
+            310
+          ]
+        },
+        {
+          "item": "Удлинитель IEK 30м IP 44",
+          "price": [
+            390,
+            1400,
+            780,
+            490
+          ]
+        },
+        {
+          "item": "Удлинитель IEK 50м IP 44",
+          "price": [
+            550,
+            2100,
+            1100,
+            690
+          ]
+        }
+      ]
+    }
+  ],
+  "len": 128
+}
