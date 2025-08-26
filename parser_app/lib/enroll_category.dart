@@ -58,7 +58,7 @@ class _EnrollCategoryState extends State<EnrollCategory>
       margin: EdgeInsets.only(top: 5.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
-        border: Border.all(width: 2, color: Colors.black),
+        border: Border.all(width: 2, color: Color(0xFF95979A)),
       ),
       child: Column(
         children: [

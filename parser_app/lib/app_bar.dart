@@ -1,23 +1,80 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
 
-class AppBar extends StatefulWidget {
-  final Map<String, dynamic> category;
-  const AppBar({super.key, required this.category});
+class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key, this.initialPage = 0, required this.height});
+  final int initialPage;
+  final double height;
 
   @override
-  State<AppBar> createState() => AppBarState();
+  CustomAppBarState createState() => CustomAppBarState();
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 }
 
-class AppBarState extends State<AppBar> {
+class CustomAppBarState extends State<CustomAppBar> {
+  late int page;
+
+  @override
+  void initState() {
+    super.initState();
+    page = widget.initialPage;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 390.w,
-      height: 40.h,
-      child: Row(
+    return AppBar(
+      backgroundColor: Colors.white,
+      toolbarHeight: widget.height,
+      title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextButton(
+            onPressed: () {
+              setState(() {
+                page = 0;
+              });
+            },
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+              overlayColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+            ),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 5.h,),
+                Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/icons/logo.png',
+                  width: 40.sp,
+                  height: 40.sp,
+                ),
+                SizedBox(width: 5.w),
+                Text(
+                  'Амерта',
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            Text('Каталог',
+            style: TextStyle(
+                    fontSize: 18.sp,
+                    color: Colors.black,
+            ),)
+              ]
+            )
+          ),
+        ],
       ),
     );
   }

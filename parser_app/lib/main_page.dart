@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
 import 'enroll_category.dart';
+import 'app_bar.dart';
 
 class HomePage extends StatefulWidget {
   final VoidCallback logout;
@@ -117,61 +118,74 @@ class HomePageState extends State<HomePage> {
             width: 390.w,
             height: 844.h,
             child: Scaffold(
-              body: Column(
-                children: [
-                  Container(
-                    width: 370.w,
-                    height: 30.h,
-                    margin: EdgeInsets.only(top: 10.h, left: 10.w, right: 10.w),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 204, 204, 204),
-                      borderRadius: BorderRadius.circular(6.sp),
-                    ),
-                    padding: EdgeInsets.only(left: 10.w, top: 5.h, bottom: 5.h),
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        isCollapsed: true,
-                        contentPadding: EdgeInsets.only(bottom: 0),
-                        hintText: 'Sony',
-                        hintStyle: TextStyle(
-                          color: Color.fromARGB(255, 160, 160, 160),
-                          fontSize: 16.sp,
-                        ),
-                        hintFadeDuration: Duration(milliseconds: 300),
+              appBar: CustomAppBar(height: 60.h),
+              body: Container(
+                width: 390.w,
+                height: 844.h,
+                decoration: BoxDecoration(
+                  color: Colors.white
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 370.w,
+                      height: 30.h,
+                      margin: EdgeInsets.only(top: 10.h, left: 10.w, right: 10.w),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 204, 204, 204),
+                        borderRadius: BorderRadius.circular(6.sp),
                       ),
-                      style: TextStyle(color: Colors.black, fontSize: 16.sp),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 804.h,
-                    child: _text == ''
-                        ? ListView.builder(
-                            padding: EdgeInsets.only(
-                              top: 10.h,
-                              bottom: 10.h,
-                              right: 10.w,
-                              left: 10.w,
-                            ),
-                            itemCount: (data["data"] as List).length,
-                            itemBuilder: (context, i) {
-                              return EnrollCategory(category: data["data"][i]);
-                            },
-                          )
-                        : ListView(
-                            padding: EdgeInsets.only(
-                              top: 10.h,
-                              bottom: 10.h,
-                              right: 10.w,
-                              left: 10.w,
-                            ),
-                            children: [Text(_text)],
+                      padding: EdgeInsets.only(left: 10.w, top: 5.h, bottom: 5.h),
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          isCollapsed: true,
+                          contentPadding: EdgeInsets.only(bottom: 0),
+                          hintText: 'Sony',
+                          hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 160, 160, 160),
+                            fontSize: 16.sp,
                           ),
-                  ),
-                ],
-              ),
+                          hintFadeDuration: Duration(milliseconds: 300),
+                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 16.sp),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.sp)
+                      ),
+                      margin: EdgeInsets.only(top: 10.h, bottom: 20.h),
+                      height: 656.h,
+                      child: _text == ''
+                          ? ListView.builder(
+                              padding: EdgeInsets.only(
+                                top: 10.h,
+                                bottom: 10.h,
+                                right: 10.w,
+                                left: 10.w,
+                              ),
+                              itemCount: (data["data"] as List).length,
+                              itemBuilder: (context, i) {
+                                return EnrollCategory(category: data["data"][i]);
+                              },
+                            )
+                          : ListView(
+                              padding: EdgeInsets.only(
+                                top: 10.h,
+                                bottom: 10.h,
+                                right: 10.w,
+                                left: 10.w,
+                              ),
+                              children: [Text(_text)],
+                            ),
+                    ),
+                  ],
+                ),
+              )
             ),
           ),
         ),

@@ -96,9 +96,6 @@ class _MyAppState extends State<MyApp> {
               accessibleNavigation: false,
               highContrast: false,
               invertColors: false,
-              padding: EdgeInsets.zero,
-              viewInsets: EdgeInsets.zero,
-              viewPadding: EdgeInsets.zero,
             ),
             child: child!,
           );
