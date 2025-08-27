@@ -1,12 +1,20 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.db import IntegrityError
 from datetime import datetime as dt
 from rapidfuzz import process, fuzz
 import unicodedata
 import pandas as pd
 import os
 import json
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
 
@@ -155,10 +163,6 @@ def search(query: str, score_cutoff: int = 80):
             i += 1
     return data
 
-
-def get_by_search(request):
-    query = request.GET.get('query', '')
-    return JsonResponse({'data': search(query)})
     
 
 
@@ -208,3 +212,84 @@ def get_sum(request):
                 diff_in_days = 0
     return JsonResponse({'result': result})
     
+
+
+# ====== 👇 ДОБАВИТЬ ВНИЗ parser/views.py 👇 ======
+
+# "кто я" — аналог request.user в шаблоне
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def me(request):
+    u = request.user
+    return Response({
+        "id": u.id,
+        "username": u.username,
+        "email": getattr(u, "email", None),
+    })
+
+# логаут — баним присланный refresh
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def jwt_logout(request):
+    refresh = request.data.get("refresh")
+    if not refresh:
+        return Response({"detail": "refresh required"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        RefreshToken(refresh).blacklist()
+    except Exception:
+        return Response({"detail": "invalid refresh"}, status=status.HTTP_400_BAD_REQUEST)
+    return Response(status=status.HTTP_204_NO_CONTENT)
+
+# 👇 Защищённые обёртки над твоими уже существующими вьюхами.
+#    Никакой магии — просто требуем токен и вызываем старую логику.
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def get_sum_secure(request, *args, **kwargs):
+    return get_sum(request, *args, **kwargs)
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def get_cached_goods_secure(request, *args, **kwargs):
+    return get_cached_goods(request, *args, **kwargs)
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def get_by_search_secure(request):
+    query = request.query_params.get('query')
+    return JsonResponse({'data': search(query)})
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def write_file_secure(request, *args, **kwargs):
+    return write_file(request, *args, **kwargs)
+# ====== ☝ ДОБАВИТЬ ВНИЗ parser/views.py ☝ ======
+
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def register(request):
+    """
+    Принимает JSON:
+    { "username": "...", "password": "...", "email": "..." }   # email опционально
+    Если username не передали, берём email как username.
+    На успех: 201 + {access, refresh}.
+    """
+    username = (request.data.get("username") or request.data.get("email") or "").strip()
+    password = (request.data.get("password") or "").strip()
+    email = (request.data.get("email") or "").strip()
+
+    if not username or not password:
+        return Response({"detail": "username и password обязательны"}, status=400)
+
+    User = get_user_model()
+    try:
+        user = User.objects.create_user(username=username, email=email, password=password)
+    except IntegrityError:
+        return Response({"detail": "username уже занят"}, status=400)
+
+    # сразу логиним «по-взрослому»: выдаём пару токенов
+    refresh = RefreshToken.for_user(user)
+    return Response(
+        {"access": str(refresh.access_token), "refresh": str(refresh)},
+        status=status.HTTP_201_CREATED,
+    )
