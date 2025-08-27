@@ -5,7 +5,7 @@ import 'enroll_category.dart';
 import 'auth.dart';
 
 class Catalog extends StatefulWidget {
-  Catalog({super.key});
+  const Catalog({super.key});
 
   @override
   State<Catalog> createState() => CatalogState();
@@ -17,8 +17,15 @@ class CatalogState extends State<Catalog> {
   final TextEditingController _searchController = TextEditingController();
   bool fetchSearchDataFlag = false;
   String _lastText = '';
+  double _left = 0;
 
   int _reqToken = 0;
+
+  void moveToX (double left) {
+    setState(() {
+      _left = left;
+    });
+  }
 
   Future<void> fetchAll() async {
     final token = ++_reqToken;
@@ -98,74 +105,80 @@ class CatalogState extends State<Catalog> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 390.w,
-      height: 844.h,
-      decoration: BoxDecoration(color: Colors.white),
-      child: Column(
-        children: [
-          Container(
-            width: 370.w,
-            height: 30.h,
-            margin: EdgeInsets.only(top: 10.h, left: 10.w, right: 10.w),
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 204, 204, 204),
-              borderRadius: BorderRadius.circular(6.sp),
-            ),
-            padding: EdgeInsets.only(left: 10.w, top: 5.h, bottom: 5.h),
-            child: TextField(
-              keyboardType: TextInputType.number,
-              controller: _searchController,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                isCollapsed: true,
-                contentPadding: EdgeInsets.only(bottom: 0),
-                hintText: 'Найди что нужно',
-                hintStyle: TextStyle(
-                  color: Color.fromARGB(255, 160, 160, 160),
-                  fontSize: 16.sp,
-                ),
-                hintFadeDuration: Duration(milliseconds: 300),
+    return AnimatedPositioned(
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeInCirc,
+      top: 0,
+      left: _left,
+      child: Container(
+        width: 390.w,
+        height: 844.h,
+        decoration: BoxDecoration(color: Colors.white),
+        child: Column(
+          children: [
+            Container(
+              width: 370.w,
+              height: 30.h,
+              margin: EdgeInsets.only(top: 10.h, left: 10.w, right: 10.w),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 204, 204, 204),
+                borderRadius: BorderRadius.circular(6.sp),
               ),
-              style: TextStyle(color: Colors.black, fontSize: 16.sp),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10.sp),
-            ),
-            margin: EdgeInsets.only(top: 10.h, bottom: 0.h),
-            height: 656.h,
-            child: _text == ''
-                ? ListView.builder(
-                    padding: EdgeInsets.only(
-                      top: 10.h,
-                      bottom: 10.h,
-                      right: 10.w,
-                      left: 10.w,
-                    ),
-                    itemCount: (data["data"] as List).length,
-                    itemBuilder: (context, i) {
-                      return EnrollCategory(category: data["data"][i]);
-                    },
-                  )
-                : ListView(
-                    padding: EdgeInsets.only(
-                      top: 10.h,
-                      bottom: 10.h,
-                      right: 10.w,
-                      left: 10.w,
-                    ),
-                    children: [
-                      Center(
-                        child: Text(_text, style: TextStyle(fontSize: 18.sp)),
-                      ),
-                    ],
+              padding: EdgeInsets.only(left: 10.w, top: 5.h, bottom: 5.h),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                controller: _searchController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.only(bottom: 0),
+                  hintText: 'Найди что нужно',
+                  hintStyle: TextStyle(
+                    color: Color.fromARGB(255, 160, 160, 160),
+                    fontSize: 16.sp,
                   ),
-          ),
-        ],
-      ),
+                  hintFadeDuration: Duration(milliseconds: 300),
+                ),
+                style: TextStyle(color: Colors.black, fontSize: 16.sp),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.sp),
+              ),
+              margin: EdgeInsets.only(top: 10.h, bottom: 0.h),
+              height: 656.h,
+              child: _text == ''
+                  ? ListView.builder(
+                      padding: EdgeInsets.only(
+                        top: 10.h,
+                        bottom: 10.h,
+                        right: 10.w,
+                        left: 10.w,
+                      ),
+                      itemCount: (data["data"] as List).length,
+                      itemBuilder: (context, i) {
+                        return EnrollCategory(category: data["data"][i]);
+                      },
+                    )
+                  : ListView(
+                      padding: EdgeInsets.only(
+                        top: 10.h,
+                        bottom: 10.h,
+                        right: 10.w,
+                        left: 10.w,
+                      ),
+                      children: [
+                        Center(
+                          child: Text(_text, style: TextStyle(fontSize: 18.sp)),
+                        ),
+                      ],
+                    ),
+            ),
+          ],
+        ),
+      )
     );
   }
 }

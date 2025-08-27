@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, this.initialPage = 0, required this.height});
+  const CustomAppBar({super.key, this.initialPage = 0, required this.height, required this.changePage});
   final int initialPage;
   final double height;
+  final void Function(int) changePage;
 
   @override
   CustomAppBarState createState() => CustomAppBarState();
@@ -15,6 +16,9 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class CustomAppBarState extends State<CustomAppBar> {
   late int page;
+
+  Color activeFieldColor = Color.fromARGB(30, 0, 158, 58);
+  int selectedPage = 0;
 
   @override
   void initState() {
@@ -27,54 +31,133 @@ class CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       backgroundColor: Colors.white,
       toolbarHeight: widget.height,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          TextButton(
-            onPressed: () {
-              setState(() {
-                page = 0;
-              });
-            },
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-              overlayColor: Colors.transparent,
-              splashFactory: NoSplash.splashFactory,
+      title: SizedBox(
+        height: 70.h,
+        width: double.infinity,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            AnimatedContainer(
+              duration: Duration(milliseconds: 250),
+              curve: Curves.easeInOut,
+              width: 140.w,
+              padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
+              decoration:BoxDecoration(
+                color: selectedPage == 0 ? activeFieldColor : Colors.transparent,
+                borderRadius: BorderRadius.circular(25.sp)
+              ),
+              child: TextButton(
+              onPressed: () {
+                setState(() {
+                  selectedPage = 0;
+                });
+                widget.changePage(selectedPage);
+                print('centerIcon');
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                shadowColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(mainAxisSize: MainAxisSize.min, children: [
+                    Image.asset('assets/icons/logo.png', width: 28.sp, height: 28.sp),
+                    SizedBox(width: 6.w),
+                    Text('Амерта', style: TextStyle(fontSize: 20.sp, color: Colors.black)),
+                  ]),
+                  SizedBox(height: 5.h,),
+                  Text('Каталог', style: TextStyle(fontSize: 16.sp, color: Color.fromARGB(255, 127, 127, 127))),
+                ],
+              ),
             ),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 5.h,),
-                Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/icons/logo.png',
-                  width: 40.sp,
-                  height: 40.sp,
-                ),
-                SizedBox(width: 5.w),
-                Text(
-                  'Амерта',
-                  style: TextStyle(
-                    fontSize: 20.sp,
-                    color: Colors.black,
+            ),
+            Positioned.fill(
+              left: 0, right: null,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 250),
+                  curve: Curves.easeInOut,
+                  width: 90.w,
+                  padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
+                  decoration:BoxDecoration(
+                    color: selectedPage == 1 ? activeFieldColor : Colors.transparent,
+                    borderRadius: BorderRadius.circular(25.sp)
                   ),
-                ),
-              ],
+                  child: TextButton(
+              onPressed: () {
+                setState(() {
+                  selectedPage = 1;
+                });
+                widget.changePage(selectedPage);
+                print('leftIcon');
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                shadowColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(mainAxisSize: MainAxisSize.min, children: [
+                    Image.asset('assets/icons/profile.png', width: 28.sp, height: 28.sp),
+                  ]),
+                  SizedBox(height: 5.h,),
+                  Text('Профиль', style: TextStyle(fontSize: 16.sp, color: Color.fromARGB(255, 127, 127, 127))),
+                ],
+              ),
             ),
-            Text('Каталог',
-            style: TextStyle(
-                    fontSize: 18.sp,
-                    color: Colors.black,
-            ),)
-              ]
             )
-          ),
-        ],
+              ),
+            ),
+            Positioned.fill(
+              right: 0, left: null,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 250),
+                  curve: Curves.easeInOut,
+                  width: 90.w,
+                  padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
+                  decoration:BoxDecoration(
+                    color: selectedPage == 2 ? activeFieldColor : Colors.transparent,
+                    borderRadius: BorderRadius.circular(25.sp)
+                  ),
+                  child: TextButton(
+              onPressed: () {
+                setState(() {
+                  selectedPage = 2;
+                });
+                widget.changePage(selectedPage);
+                print('rightIcon');
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                shadowColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(mainAxisSize: MainAxisSize.min, children: [
+                    Image.asset('assets/icons/cart.png', width: 28.sp, height: 28.sp),
+                  ]),
+                  SizedBox(height: 5.h,),
+                  Text('Корзина', style: TextStyle(fontSize: 16.sp, color: Color.fromARGB(255, 127, 127, 127))),
+                ],
+              ),
+            ),
+            )
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

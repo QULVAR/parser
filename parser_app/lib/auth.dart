@@ -7,9 +7,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:universal_html/html.dart' as html;
 
 String _detectBase() {
-  // подгони при надобности
   if (kIsWeb) return 'http://127.0.0.1:8000';
-  if (Platform.isAndroid) return 'http://10.0.2.2:8000'; // андроид-эмулятор
+  if (Platform.isAndroid) return 'http://10.0.2.2:8000';
   return 'http://127.0.0.1:8000';
 }
 
@@ -124,7 +123,6 @@ class Api {
 
     if (r.statusCode != 401) return r;
 
-    // пробуем refresh один раз
     if (refresh == null || refresh.isEmpty) return r;
     final ok = await _tryRefresh(refresh);
     if (!ok) return r;
@@ -160,6 +158,5 @@ class Api {
     if (access == null) return false;
     await _store.save(access, newRefresh);
     return true;
-    // всё, «рефрешнулись», можно повторить запрос
   }
 }
