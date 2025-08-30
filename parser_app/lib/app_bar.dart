@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, this.initialPage = 0, required this.height, required this.changePage});
+  const CustomAppBar({
+    super.key,
+    this.initialPage = 0,
+    required this.height,
+    required this.changePage
+  });
   final int initialPage;
   final double height;
   final void Function(int) changePage;
@@ -24,6 +29,12 @@ class CustomAppBarState extends State<CustomAppBar> {
   void initState() {
     super.initState();
     page = widget.initialPage;
+  }
+
+  void changePage(int page) {
+    setState(() {
+      selectedPage = page;
+    });
   }
 
   @override

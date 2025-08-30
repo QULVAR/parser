@@ -76,9 +76,7 @@ class _MyAppState extends State<MyApp> {
       });
       _loginPageKey.currentState?.clear();
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Неверный логин/пароль')));
+      print('Неверный логин/пароль');
     }
   }
 

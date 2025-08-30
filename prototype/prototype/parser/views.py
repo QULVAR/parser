@@ -220,7 +220,10 @@ def get_sum(request):
 @permission_classes([IsAuthenticated])
 def me(request):
     u = request.user
-    return Response({
+    print(u.id)
+    print(u.username)
+    print(getattr(u, "email", None))
+    return JsonResponse({
         "id": u.id,
         "username": u.username,
         "email": getattr(u, "email", None),

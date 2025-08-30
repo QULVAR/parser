@@ -1,15 +1,15 @@
 class Cart {
-  static List<List<String>> userCart = [];
+  static List<List<String>> _userCart = [];
 
   static void addToCart(String category, String item) {
-    userCart.add([category, item]);
+    _userCart.add([category, item]);
   }
 
   static void removeFromCart(String category, String item) {
-    userCart.remove([category, item]);
+    _userCart.removeWhere((pair) => pair[0] == category && pair[1] == item);
   }
 
   static List<List<String>> getCart() {
-    return userCart;
+    return _userCart;
   }
 }

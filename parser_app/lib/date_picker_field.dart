@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import 'resizer.dart';
-import 'text_styles.dart';
 
 
 class DatePickerField extends StatefulWidget {
@@ -40,7 +39,13 @@ class DatePickerFieldState extends State<DatePickerField> {
   }
 
   void _recalcMetrics() {
-    final style = context.menuBody16W400(Color(0xFF404040));
+    final style = TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13.sp,
+      height: (20/16),
+      letterSpacing: 0,
+      color: Color(0xFF404040)
+    );
     final td = widget.right ? TextDirection.rtl : TextDirection.ltr;
 
     final text = _controller.text;
@@ -48,7 +53,13 @@ class DatePickerFieldState extends State<DatePickerField> {
   }
 
   void _recalcHintWidth() {
-    final style = context.menuBody16W400(Color(0xFFA7A7A7));
+    final style = TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13.sp,
+      height: (20/16),
+      letterSpacing: 0,
+      color: Color(0xFFA7A7A7)
+    );
     final td = widget.right ? TextDirection.rtl : TextDirection.ltr;
     _hintWidth = _measureTextWidth('дд.мм.гггг чч:мм', style, td);
   }
@@ -197,10 +208,13 @@ class DatePickerFieldState extends State<DatePickerField> {
   @override
   Widget build(BuildContext context) {
     late final double targetWidth;
-    if (_hintWidth >= _textWidth) {
+    if ((_textWidth > 0) && (_textWidth <= 94.sp)) {
+      targetWidth = 94.sp;
+    } else if (_textWidth > 94.sp) {
+      targetWidth = _textWidth + 2.sp;
+    }
+    else {
       targetWidth = _hintWidth;
-    } else {
-      targetWidth = _textWidth + 1.5.sp;
     }
     return AnimatedContainer(
       duration: const Duration(milliseconds: 100),
@@ -215,13 +229,25 @@ class DatePickerFieldState extends State<DatePickerField> {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: 'дд.мм.гггг чч:мм',
-          hintStyle: context.menuBody16W400(Color(0xFFA7A7A7)),
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 13.sp,
+            height: (20/16),
+            letterSpacing: 0,
+            color: Color(0xFFA7A7A7)
+          ),
           hintFadeDuration: Duration(milliseconds: 300),
           hintTextDirection: widget.right ? TextDirection.rtl : TextDirection.ltr,
           isCollapsed: true,
           contentPadding: EdgeInsets.zero,
         ),
-        style: context.menuBody16W400(Color(0xFF404040)),
+        style: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 13.sp,
+          height: (20/16),
+          letterSpacing: 0,
+          color: Color(0xFF404040)
+        ),
       )
     );
   }

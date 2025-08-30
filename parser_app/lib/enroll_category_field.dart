@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
 import 'package:lottie/lottie.dart';
+import 'cart.dart';
 
 class EnrollCategoryField extends StatefulWidget {
   final dynamic item;
@@ -60,8 +61,10 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField>
     if (_c.isAnimating) return;
     if (inCart) {
       _c.reverse(from: 1.0);
+      Cart.removeFromCart(widget.category, widget.item['item']);
     } else {
       _c.forward(from: 0.0);
+      Cart.addToCart(widget.category, widget.item['item']);
     }
     setState(() => inCart = !inCart);
   }
@@ -171,6 +174,18 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField>
                     ],
                   ),
                 ),
+                widget.item['price'].length == 5
+                ? Container(
+                    margin: EdgeInsets.only(top: 10.h),
+                    child: Text(
+                    '${widget.item['price'][4]}',
+                    style: TextStyle(
+                      fontSize: 13.sp,
+                      color: const Color.fromARGB(255, 99, 99, 99),
+                    ),
+                  )
+                )
+                : SizedBox()
               ],
             ),
           ),
