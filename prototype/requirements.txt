@@ -1,0 +1,7 @@
+Django==5.2.*
+djangorestframework==3.15.*
+djangorestframework-simplejwt==5.3.*
+django-cors-headers==4.3.*
+rapidfuzz==3.6.*
+pandas==2.2.*
+openpyxl==3.1.*

@@ -1,0 +1,44 @@
+services:
+  # Django API Backend
+  backend:
+    build:
+      context: ./prototype
+      dockerfile: Dockerfile
+    container_name: pki_backend
+    env_file: .env
+    ports:
+      - "${DOCKER_DJANGO_PORT:-8000}:8000"
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:-django-insecure-xc@8ffrfpz0ac)-@2)+@-(0l$@f9xw*j(m897q3bgfx^f@q@w!}
+      - DJANGO_DEBUG=${DJANGO_DEBUG:-True}
+      - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,0.0.0.0,backend}
+    volumes:
+      # Монтируем базу данных для персистентности
+      - ./prototype/prototype/db.sqlite3:/app/db.sqlite3
+      # Монтируем статические файлы
+      - ./prototype/prototype/parser/static:/app/parser/static
+    healthcheck:
+      test: ["CMD", "python", "manage.py", "check"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Flutter Web Frontend
+  frontend:
+    build:
+      context: ./parser_app
+      dockerfile: Dockerfile
+    container_name: pki_frontend
+    ports:
+      - "${DOCKER_FLUTTER_PORT:-8080}:5500"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test:
+        ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
