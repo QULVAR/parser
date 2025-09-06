@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pki_frontend_app/auth.dart';
 import 'package:pki_frontend_app/calendar_pop_up.dart';
 import 'package:pki_frontend_app/cart.dart';
+import 'package:pki_frontend_app/cart_page_item.dart';
 import 'package:pki_frontend_app/date_picker_field.dart';
 import 'package:pki_frontend_app/resizer.dart';
 
@@ -15,6 +17,7 @@ class CartPage extends StatefulWidget {
 class CartPageState extends State<CartPage> {
   double _left = 390.w;
   late List<List<String>> userCart;
+  double sum = 0;
 
   void moveToX (double left) {
     setState(() {
@@ -31,6 +34,13 @@ class CartPageState extends State<CartPage> {
   void getUserCart() {
     setState(() {
       userCart = Cart.getCart();
+    });
+  }
+
+  Future<void> buttonPress() async {
+    final resp = await Api.I.getCost(Cart.getCartRequest());
+    setState(() {
+      sum = resp['result'].toDouble();
     });
   }
 
@@ -210,50 +220,62 @@ class CartPageState extends State<CartPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: (userCart as List)
-                    .map<Widget>(
-                      (item) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            item[1],
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14.sp,
-                              color: Colors.black
-                            ),
-                          ),
-                          SizedBox(height: 3.sp,)
-                        ]
-                      )
-                    )
-                    .toList(),
-                ),
+                  children: [
+                    Container(
+                      width: 335.w,
+                      height: 1,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 203, 203, 203)
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: (userCart as List)
+                        .map<Widget>(
+                          (item) => CartPageItem(item: item)
+                        ).toList(),
+                    ),
+                  ],
+                ) 
               ),
             ),
             Container(
               height: 40.h,
               padding: EdgeInsets.only(top: 10.h, left: 15.w),
-              child: Text(
-                'Всего: ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16.sp,
-                ),
-              ),
+              child: Row(
+                children: [
+                  Text(
+                    'Всего: ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.sp,
+                    ),
+                  ),
+                  Text(
+                    '$sum ₽',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.sp,
+                    ),
+                  )
+                ],
+              )
             ),
             TextButton(
               onPressed: () {
-                if (backgroundColorButton == Color(0xFF4DABEE)) {
+                if (backgroundColorButton == Color.fromARGB(150, 0, 158, 58)) {
                   FocusScope.of(context).unfocus();
-                                                                                //add
+                  buttonPress();
                 }
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
                 minimumSize: Size(342.w, 44.h),
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                backgroundColor: Colors.transparent,
+                foregroundColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
               ),
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 300),

@@ -295,3 +295,51 @@ def register(request):
         {"access": str(refresh.access_token), "refresh": str(refresh)},
         status=status.HTTP_201_CREATED,
     )
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def get_cost(request):
+    date_str = '02-07-2025'
+    date_str2 = '15-07-2025'
+    date_obj = dt.strptime(date_str, '%d-%m-%Y')
+    weekday = date_obj.weekday()
+    date_obj2 = dt.strptime(date_str2, '%d-%m-%Y')
+    weekday2 = date_obj2.weekday()
+    diff_in_days = (date_obj2 - date_obj).days
+    result = 0
+    categories = get_dict_from_file()
+    categories_choice = [
+        ['Карты памяти CF', 'Карта памяти SanDisk Extreme CF 64 Gb, 120 Mb/s'],
+        ['Жилеты', 'Easyrig Minimax'],
+        ['Экшн камеры и 360 ', 'DJI Osmo Pocket 3'],
+        ['Фрост рамы', 'Пена 100х100 см серебро/белая']
+    ]
+    while diff_in_days != 0:
+        if diff_in_days >= 7:
+            diff_in_days -= 7
+            for choice in categories_choice:
+                result += categories[choice[0]][choice[1]][1]
+        else:
+            if weekday > weekday2:
+                if weekday == 4:
+                    for choice in categories_choice:
+                        result += categories[choice[0]][choice[1]][0]
+                    weekday = 1
+                    diff_in_days -= 4
+                elif weekday == 5:
+                    for choice in categories_choice:
+                        result += categories[choice[0]][choice[1]][0]
+                    weekday = 1
+                    diff_in_days -= 3
+                elif weekday < 4:
+                    for choice in categories_choice:
+                        result += categories[choice[0]][choice[1]][0]
+                    weekday += 1
+                    diff_in_days -= 1
+                else:
+                    raise ValueError
+            else:
+                for choice in categories_choice:
+                    result += categories[choice[0]][choice[1]][0] * diff_in_days
+                diff_in_days = 0
+    return JsonResponse({'result': result})

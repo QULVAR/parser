@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
-import 'package:lottie/lottie.dart';
+import 'package:pki_frontend_app/switch.dart';
 import 'cart.dart';
 
 class EnrollCategoryField extends StatefulWidget {
@@ -17,23 +17,14 @@ class EnrollCategoryField extends StatefulWidget {
   State<EnrollCategoryField> createState() => _EnrollCategoryFieldState();
 }
 
-class _EnrollCategoryFieldState extends State<EnrollCategoryField>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _c;
-  bool inCart = false;
+class _EnrollCategoryFieldState extends State<EnrollCategoryField> {
   double _textWidthText = 0, _textWidthNumber = 0;
+  final _switcherKey = GlobalKey<SwitcherState>();
 
   @override
   void initState() {
     super.initState();
-    _c = AnimationController(vsync: this);
     _recalcMetrics();
-  }
-
-  @override
-  void dispose() {
-    _c.dispose();
-    super.dispose();
   }
 
   void _recalcMetrics() {
@@ -57,16 +48,16 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField>
     _textWidthNumber = tp2.size.width;
   }
 
-  void _onPressed() {
-    if (_c.isAnimating) return;
+  void _onPressed(bool inCart) {
     if (inCart) {
-      _c.reverse(from: 1.0);
       Cart.removeFromCart(widget.category, widget.item['item']);
     } else {
-      _c.forward(from: 0.0);
-      Cart.addToCart(widget.category, widget.item['item']);
+      try {
+        Cart.addToCart(widget.category, widget.item['item'], widget.item['price'][4]);
+      } catch (_) {
+        Cart.addToCart(widget.category, widget.item['item'], '');
+      }
     }
-    setState(() => inCart = !inCart);
   }
 
   @override
@@ -189,27 +180,12 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField>
               ],
             ),
           ),
-          IconButton(
-            onPressed: _onPressed,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(),
-            icon: Lottie.asset(
-              'assets/animations/checkbox.json',
-              height: 25.h,
-              width: 50.w,
-              controller: _c,
-              animate: false,
-              repeat: false,
-              onLoaded: (comp) {
-                _c.duration = comp.duration * 0.25;
-                _c.value = inCart ? 1.0 : 0.0;
-              },
-              options: LottieOptions(enableMergePaths: true),
-            ),
-          ),
+          Switcher(
+            key: _switcherKey,
+            height: 25.h,
+            width: 50.w,
+            onPress: _onPressed
+          )
         ],
       ),
     );

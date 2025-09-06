@@ -159,4 +159,18 @@ class Api {
     await _store.save(access, newRefresh);
     return true;
   }
+
+  Future<Map<String, dynamic>> getCost(
+  List<List<String>> matrix, {
+  String fieldName = 'data',
+  }) async {
+    final resp = await authedPost('/api/get_cost/', body: {fieldName: matrix});
+    print("request sent to /api/get_cost/");
+
+    if (resp.statusCode < 200 || resp.statusCode >= 300) {
+      throw Exception('getCost failed: ${resp.statusCode} ${resp.body}');
+    }
+    final decoded = jsonDecode(resp.body);
+    return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
+  }
 }

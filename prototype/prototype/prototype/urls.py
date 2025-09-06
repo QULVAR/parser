@@ -24,5 +24,6 @@ urlpatterns = [
     path('api/search/', pviews.get_by_search_secure),
     path('api/write_cache/', pviews.write_file_secure),
     path('api/register/', pviews.register, name='register'),
+    path('api/get_cost/', pviews.get_cost),
     path("api/token/", DebugTokenObtainPairView.as_view(), name="token_obtain_pair"),
 ]
