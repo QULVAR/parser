@@ -37,8 +37,19 @@ class CartPageState extends State<CartPage> {
     });
   }
 
+  String convetationDateToString(DateTime? value) {
+    if (value == null) {
+      return '';
+    }
+    return '${value.day}-${value.month}-${value.year}';
+  }
+
   Future<void> buttonPress() async {
-    final resp = await Api.I.getCost(Cart.getCartRequest());
+    final resp = await Api.I.getCost(
+      Cart.getCartRequest(),
+      convetationDateToString(_datePickerValue1),
+      convetationDateToString(_datePickerValue2)
+    );
     setState(() {
       sum = resp['result'].toDouble();
     });
@@ -82,9 +93,17 @@ class CartPageState extends State<CartPage> {
   void buttonColorSelector() {
     final Color buttonColor;
     final Color fieldColorLocal;
-    if (_datePickerValue1 != null && _datePickerValue2 != null && _datePickerValue1!.isBefore(_datePickerValue2!)) {
+    if (
+      _datePickerValue1 != null
+      && _datePickerValue2 != null
+      && _datePickerValue1!.isBefore(_datePickerValue2!)
+    ) {
       fieldColorLocal = Color.fromARGB(50, 0, 158, 58);
-      buttonColor = Color.fromARGB(150, 0, 158, 58);
+      if (Cart.isNotEmpty()) {
+        buttonColor = Color.fromARGB(150, 0, 158, 58);
+      } else {
+        buttonColor = Color(0xFFE6E6E6);
+      }
       calendarIcon = 'calendar_icon_green';
     } else {
       buttonColor = Color(0xFFE6E6E6);
@@ -94,6 +113,10 @@ class CartPageState extends State<CartPage> {
     if (buttonColor != backgroundColorButton) {
       setState(() {
         backgroundColorButton = buttonColor;
+      });
+    }
+    if (fieldColorLocal != fieldColor) {
+      setState(() {
         fieldColor = fieldColorLocal;
       });
     }

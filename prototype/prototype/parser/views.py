@@ -3,19 +3,26 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError
-from datetime import datetime as dt
+from datetime import datetime as dt, timedelta
 from rapidfuzz import process, fuzz
 import unicodedata
 import pandas as pd
 import os
 import json
+from copy import deepcopy
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
+
+def read_raw_parse():
+    file_path = os.path.join(CACHE_DIR, "raw.json")
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 def read_file_goods():
     file_path = os.path.join(CACHE_DIR, "data.json")
@@ -28,21 +35,34 @@ def read_file_catalog():
         return json.load(f)
 
 try:
+    RAW_PARSE = read_raw_parse()
+except:
+    RAW_PARSE = None
+
+try:
     GOODS = read_file_goods()
-    CATALOG = read_file_catalog()['data']
 except:
     GOODS = None
+
+try:
+    CATALOG = read_file_catalog()['data']
+except:
     CATALOG = None
 
+
 def write_file(request):
-    global GOODS, CATALOG
+    global RAW_PARSE, GOODS, CATALOG
     try:
+        file_path = os.path.join(CACHE_DIR, "raw.json")
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(get_dict_from_file(), f, ensure_ascii=False, indent=2)
         file_path = os.path.join(CACHE_DIR, "data.json")
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump(get_goods(request, False), f, ensure_ascii=False, indent=2)
         file_path = os.path.join(CACHE_DIR, "search.json")
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump({'data': get_catalog()}, f, ensure_ascii=False, indent=2)
+        RAW_PARSE = read_raw_parse()
         GOODS = read_file_goods()
         CATALOG = read_file_catalog()['data']
         return JsonResponse({'result': 'Success'})
@@ -116,6 +136,7 @@ def get_goods(request, flag = True):
 
 
 def get_cached_goods(request):
+    write_file(request)
     return JsonResponse(GOODS)
     
 
@@ -144,7 +165,7 @@ def search(query: str, score_cutoff: int = 80):
         score_cutoff=score_cutoff,
         limit=None
     )
-    data = GOODS['data'].copy()
+    data = deepcopy(GOODS['data'])
     results = [m for m, _, _ in results]
     for i in range(0, len(data)):
         if not data[i]['category'] + ' (category)' in results:
@@ -220,9 +241,6 @@ def get_sum(request):
 @permission_classes([IsAuthenticated])
 def me(request):
     u = request.user
-    print(u.id)
-    print(u.username)
-    print(getattr(u, "email", None))
     return JsonResponse({
         "id": u.id,
         "username": u.username,
@@ -296,24 +314,45 @@ def register(request):
         status=status.HTTP_201_CREATED,
     )
 
+
+'''
+----------------------TEST DATA----------------------
+START DATE = 02.07.2025
+END DATE = 15.07.2025
+
+categories_choice = [
+    ['Карты памяти CF', 'Карта памяти SanDisk Extreme CF 64 Gb, 120 Mb/s', '0'],
+    ['Жилеты', 'Easyrig Minimax', '0'],
+    ['Экшн камеры и 360 ', 'DJI Osmo Pocket 3', '0'],
+    ['Фрост рамы', 'Пена 100х100 см серебро/белая', '0']
+]
+
+RESULT = 30080 ₽
+'''
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def get_cost(request):
-    date_str = '02-07-2025'
-    date_str2 = '15-07-2025'
+    global RAW_PARSE
+    categories_choice = request.data.get("data", [])
+    date_str = request.data.get("start")
+    date_str2   = request.data.get("end")
     date_obj = dt.strptime(date_str, '%d-%m-%Y')
     weekday = date_obj.weekday()
     date_obj2 = dt.strptime(date_str2, '%d-%m-%Y')
     weekday2 = date_obj2.weekday()
     diff_in_days = (date_obj2 - date_obj).days
     result = 0
-    categories = get_dict_from_file()
-    categories_choice = [
-        ['Карты памяти CF', 'Карта памяти SanDisk Extreme CF 64 Gb, 120 Mb/s'],
-        ['Жилеты', 'Easyrig Minimax'],
-        ['Экшн камеры и 360 ', 'DJI Osmo Pocket 3'],
-        ['Фрост рамы', 'Пена 100х100 см серебро/белая']
-    ]
+    categories = RAW_PARSE
+    i = 0
+    while i < len(categories_choice):
+        if categories_choice[i][2] == '1':
+            condition = categories[categories_choice[i][0]][categories_choice[i][1]][4]
+            del categories_choice[i]
+            if not 'бесплатно' in condition.lower():
+                price = condition.split(' руб')[0]
+                result += int(price)
+        else:
+            i += 1
     while diff_in_days != 0:
         if diff_in_days >= 7:
             diff_in_days -= 7

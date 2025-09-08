@@ -1,4 +1,3 @@
-// lib/auth.dart
 import 'dart:convert';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -161,10 +160,15 @@ class Api {
   }
 
   Future<Map<String, dynamic>> getCost(
-  List<List<String>> matrix, {
-  String fieldName = 'data',
-  }) async {
-    final resp = await authedPost('/api/get_cost/', body: {fieldName: matrix});
+  List<List<String>> matrix,
+  String start,
+  String end
+  ) async {
+    final resp = await authedPost('/api/get_cost/', body: {
+      'data': matrix,
+      'start': start,
+      'end': end
+    });
     print("request sent to /api/get_cost/");
 
     if (resp.statusCode < 200 || resp.statusCode >= 300) {

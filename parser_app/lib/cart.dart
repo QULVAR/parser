@@ -1,15 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:pki_frontend_app/cart_page.dart';
+
 class Cart {
   static List<List<String>> _userCart = [];
   static List<List<String>> _userCartForRequest = [];
+  static GlobalKey<CartPageState>? cartPageKey;
 
   static void addToCart(String category, String item, String price) {
     _userCart.add([category, item, price]);
     _userCartForRequest.add([category, item, '0']);
+    if (cartPageKey != null) {
+      cartPageKey!.currentState?.buttonColorSelector();
+    }
   }
 
   static void removeFromCart(String category, String item) {
     _userCart.removeWhere((pair) => pair[0] == category && pair[1] == item);
     _userCartForRequest.removeWhere((pair) => pair[0] == category && pair[1] == item);
+    if (cartPageKey != null) {
+      cartPageKey!.currentState?.buttonColorSelector();
+    }
   }
 
   static void updateItemCondition(String category, String item, String condition) {
@@ -26,5 +36,13 @@ class Cart {
 
   static List<List<String>> getCartRequest() {
     return _userCartForRequest;
+  }
+
+  static bool isEmpty() {
+    return _userCart.isEmpty;
+  }
+
+  static bool isNotEmpty() {
+    return _userCart.isNotEmpty;
   }
 }

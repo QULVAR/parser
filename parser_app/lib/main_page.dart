@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pki_frontend_app/cart.dart';
 import 'package:pki_frontend_app/cart_page.dart';
 import 'package:pki_frontend_app/catalog.dart';
 import 'package:pki_frontend_app/profile.dart';
@@ -29,6 +30,7 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _top = widget.top;
+    Cart.cartPageKey = _cartPageKey;
   }
 
   void getGoods() {
