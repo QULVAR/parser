@@ -119,9 +119,6 @@ class DatePickerFieldState extends State<DatePickerField> {
               int.parse(maskedTimeSplitted[0]),
               int.parse(maskedTimeSplitted[1])
             );
-            if (candidate.isAfter(DateTime.now())) {
-              candidate = DateTime.now();
-            }
             if (!(candidate.year == int.parse(maskedDateSplitted[2])
                 && candidate.month == int.parse(maskedDateSplitted[1])
                 && candidate.day == int.parse(maskedDateSplitted[0])

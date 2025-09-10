@@ -78,7 +78,7 @@ class _EnrollCategoryState extends State<EnrollCategory>
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: _fontSize.sp,
-                      color: Color.fromARGB(255, 22, 101, 165),
+                      color: Color.fromARGB(255, 0, 158, 58),
                     ),
                   ),
                 ),

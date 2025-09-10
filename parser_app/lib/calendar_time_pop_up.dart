@@ -49,7 +49,7 @@ class CalendarTimePopUpState extends State<CalendarTimePopUp> {
       padding: EdgeInsets.only(top: 5.h, bottom: 3.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Color(0xFFEDF7FD),
+        color: Color.fromARGB(69, 0, 158, 58),
         borderRadius: BorderRadius.circular(6.sp)
       ),
       child: TextButton(

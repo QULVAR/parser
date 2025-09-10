@@ -63,7 +63,6 @@ class CustomAppBarState extends State<CustomAppBar> {
                   selectedPage = 0;
                 });
                 widget.changePage(selectedPage);
-                print('centerIcon');
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
@@ -104,7 +103,6 @@ class CustomAppBarState extends State<CustomAppBar> {
                   selectedPage = 1;
                 });
                 widget.changePage(selectedPage);
-                print('leftIcon');
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
@@ -145,7 +143,6 @@ class CustomAppBarState extends State<CustomAppBar> {
                   selectedPage = 2;
                 });
                 widget.changePage(selectedPage);
-                print('rightIcon');
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,

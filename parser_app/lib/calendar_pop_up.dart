@@ -186,7 +186,12 @@ class DatePickerCalendarState extends State<DatePickerCalendar> {
                       headerText.isEmpty
                       ? getCapitalizedMonth(DateTime.now())
                       : headerText,
-                      style: context.addProgramDialog20W500(24/20),
+                      style: TextStyle(
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w500,
+                        height: (24/20),
+                        color: Color(0xFF009E3A)
+                      )
                     ),
                   ),
                   Container(
@@ -284,20 +289,19 @@ class DatePickerCalendarState extends State<DatePickerCalendar> {
                   )
                 ),
                 monthCellStyle: DateRangePickerMonthCellStyle(
-                  textStyle: context.calendarPopUpViewNumbers(Color(0xFF4DABEE)),
-                  todayTextStyle: context.calendarPopUpViewNumbers(Color(0xFF4DABEE)),
+                  textStyle: context.calendarPopUpViewNumbers(Color(0xFF009E3A)),
+                  todayTextStyle: context.calendarPopUpViewNumbers(Color(0xFF009E3A)),
                   disabledDatesTextStyle: context.calendarPopUpViewNumbers(Color(0x3C3C434D))
                 ),
                 minDate: DateTime(1970),
-                maxDate: DateTime.now(),
                 initialDisplayDate: _initialDisplayDate,
                 selectionRadius: -1,
-                rangeSelectionColor: Color.fromARGB(80, 77, 171, 238),
-                selectionColor: Color(0xFF4DABEE),
-                startRangeSelectionColor: Color(0xFF4DABEE),
-                endRangeSelectionColor: Color(0xFF4DABEE),
+                rangeSelectionColor: Color.fromARGB(60, 0, 158, 58),
+                selectionColor: Color(0xFF009E3A),
+                startRangeSelectionColor: Color(0xFF009E3A),
+                endRangeSelectionColor: Color(0xFF009E3A),
                 selectionTextStyle: context.calendarPopUpViewNumbers(Colors.white, FontWeight.w600),
-                rangeTextStyle: context.calendarPopUpViewNumbers(Color(0xFF4DABEE)),
+                rangeTextStyle: context.calendarPopUpViewNumbers(Color(0xFF009E3A)),
                 monthFormat: 'MMMM',
                 extendableRangeSelectionDirection: ExtendableRangeSelectionDirection.both,
                 selectionMode: widget.mode == 'single'
