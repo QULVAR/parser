@@ -8,10 +8,10 @@ class EnrollCategory extends StatefulWidget {
   const EnrollCategory({super.key, required this.category});
 
   @override
-  State<EnrollCategory> createState() => _EnrollCategoryState();
+  State<EnrollCategory> createState() => EnrollCategoryState();
 }
 
-class _EnrollCategoryState extends State<EnrollCategory>
+class EnrollCategoryState extends State<EnrollCategory>
     with AutomaticKeepAliveClientMixin {
   bool rolled = false;
   double _fontSize = 18.sp;

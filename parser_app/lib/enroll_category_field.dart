@@ -184,7 +184,8 @@ class _EnrollCategoryFieldState extends State<EnrollCategoryField> {
             key: _switcherKey,
             height: 25.h,
             width: 50.w,
-            onPress: _onPressed
+            onPress: _onPressed,
+            isOn: Cart.isInCart(widget.category, widget.item['item']),
           )
         ],
       ),

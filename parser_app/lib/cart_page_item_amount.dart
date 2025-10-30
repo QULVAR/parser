@@ -26,6 +26,14 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
   }
 
   @override
+  void didUpdateWidget(CartPageItemAmount oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.amount != oldWidget.amount) {
+      amount = widget.amount; // синхронизируем локальное состояние
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 64.sp,
@@ -34,12 +42,12 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
           TextButton(
             onPressed: () {
               setState(() {
-                if (amount != 1) {
-                  setState(() {
-                    amount -= 1;
-                  });
-                  widget.onPress('-');
+                if (amount <= 1) {
+                  widget.onPress('--'); // удаление позиции
+                  return;
                 }
+                amount -= 1;
+                widget.onPress('-');
               });
             },
             style: TextButton.styleFrom(
@@ -65,9 +73,7 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
           TextButton(
             onPressed: () {
               setState(() {
-                setState(() {
-                  amount += 1;
-                });
+                amount += 1;
                 widget.onPress('+');
               });
             },

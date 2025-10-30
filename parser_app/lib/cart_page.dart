@@ -21,6 +21,8 @@ class CartPageState extends State<CartPage> {
   late List<List<String>> userCart;
   double sum = 0;
 
+  void updatePage() {setState(() {});}
+
   void moveToX (double left) {
     setState(() {
       _left = left;
@@ -159,20 +161,25 @@ class CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+    final sorted = List<List<String>>.from(userCart, growable: false)
+      ..sort((a, b) {
+        final c = a[0].compareTo(b[0]); // категория
+        return c != 0 ? c : a[1].compareTo(b[1]); // товар
+      });
     List<List<String>> userCartView = [];
-    if (userCart.isNotEmpty) {
-      var prev = List.of(userCart[0]);
+    if (sorted.isNotEmpty) {
+      var prev = List.of(sorted[0]);
       userCartView.add(List.of(prev));
       userCartView[0].add("1");
-      if (userCart.length > 1) {
-        for (int index = 1; index < userCart.length; index++) {
-          if (listEquals(prev, userCart[index])) {
+      if (sorted.length > 1) {
+        for (int index = 1; index < sorted.length; index++) {
+          if (listEquals(prev, sorted[index])) {
             userCartView[userCartView.length - 1][3] =
                 (int.parse(userCartView[userCartView.length - 1][3]) + 1).toString();
           } else {
-            userCartView.add(List.of(userCart[index]));
+            userCartView.add(List.of(sorted[index]));
             userCartView[userCartView.length - 1].add('1');
-            prev = List.of(userCart[index]);
+            prev = List.of(sorted[index]);
           }
         }
       }
@@ -276,7 +283,11 @@ class CartPageState extends State<CartPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: (userCartView as List)
                         .map<Widget>(
-                          (item) => CartPageItem(item: item)
+                          (item) => CartPageItem(
+                            key: ValueKey('${item[0]}|${item[1]}'),
+                            item: item,
+                            updatePage: updatePage,
+                          )
                         ).toList(),
                     ),
                   ],

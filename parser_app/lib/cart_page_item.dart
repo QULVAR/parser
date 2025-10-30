@@ -7,10 +7,12 @@ import 'package:pki_frontend_app/cart_page_item_amount.dart';
 
 class CartPageItem extends StatefulWidget {
   final item;
+  final Function updatePage;
 
   const CartPageItem ({
     super.key,
-    required this.item
+    required this.item,
+    required this.updatePage
   });
 
   @override
@@ -37,6 +39,13 @@ class CartPageItemState extends State<CartPageItem> {
     }
     else if (mode == '-') {
       Cart.removeFromCart(widget.item[0], widget.item[1]);
+    }
+    else if (mode == '--') {
+      Cart.removeFromCart(widget.item[0], widget.item[1]);
+      widget.updatePage();
+      if (Cart.catalogListViewBuilderKey != null) {
+        Cart.catalogListViewBuilderKey?.currentState?.updatePage();
+      }
     }
   }
 

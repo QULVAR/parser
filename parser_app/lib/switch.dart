@@ -5,12 +5,14 @@ class Switcher extends StatefulWidget {
   final Function onPress;
   final double height;
   final double width;
+  final bool isOn;
 
   Switcher({
     super.key,
     required this.onPress,
     required this.height,
-    required this.width
+    required this.width,
+    this.isOn = false
   });
 
   @override
@@ -25,6 +27,7 @@ class SwitcherState extends State<Switcher> with SingleTickerProviderStateMixin 
   void initState() {
     super.initState();
     _c = AnimationController(vsync: this);
+    isOn = widget.isOn;
   }
 
   @override

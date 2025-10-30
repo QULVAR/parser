@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/resizer.dart';
-import 'enroll_category.dart';
+import 'catalog_list_view_builder.dart';
+import 'cart.dart';
 import 'auth.dart';
 
 class Catalog extends StatefulWidget {
@@ -15,6 +16,7 @@ class CatalogState extends State<Catalog> {
   String _text = "Загружаю...";
   late dynamic data;
   final TextEditingController _searchController = TextEditingController();
+  final _catalogListViewBuilderKey = GlobalKey<CatalogListViewBuilderState>();
   bool fetchSearchDataFlag = false;
   String _lastText = '';
   double _left = 0;
@@ -91,6 +93,7 @@ class CatalogState extends State<Catalog> {
   @override
   void initState() {
     super.initState();
+    Cart.catalogListViewBuilderKey = _catalogListViewBuilderKey;
     _searchController.addListener(() {
       String searchInput = _searchController.text;
       if (searchInput == _lastText) return;
@@ -150,18 +153,10 @@ class CatalogState extends State<Catalog> {
               margin: EdgeInsets.only(top: 10.h, bottom: 0.h),
               height: 656.h,
               child: _text == ''
-                  ? ListView.builder(
-                      padding: EdgeInsets.only(
-                        top: 10.h,
-                        bottom: 10.h,
-                        right: 10.w,
-                        left: 10.w,
-                      ),
-                      itemCount: (data["data"] as List).length,
-                      itemBuilder: (context, i) {
-                        return EnrollCategory(category: data["data"][i]);
-                      },
-                    )
+                  ? CatalogListViewBuilder(
+                    key: _catalogListViewBuilderKey,
+                    data: data["data"]
+                  )
                   : ListView(
                       padding: EdgeInsets.only(
                         top: 10.h,

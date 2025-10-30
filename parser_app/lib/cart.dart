@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/cart_page.dart';
+import 'package:pki_frontend_app/catalog_list_view_builder.dart';
 
 class Cart {
   static List<List<String>> _userCart = [];
   static List<List<String>> _userCartForRequest = [];
   static GlobalKey<CartPageState>? cartPageKey;
+  static GlobalKey<CatalogListViewBuilderState>? catalogListViewBuilderKey;
 
   static void addToCart(String category, String item, String price) {
     _userCart.add([category, item, price]);
@@ -30,6 +32,11 @@ class Cart {
         _userCartForRequest[i][2] = condition;
       }
     }
+  }
+
+  static bool isInCart(String category, String item) {
+    final i = _userCart.indexWhere((pair) => pair[0] == category && pair[1] == item);
+    return i != -1;
   }
 
   static List<List<String>> getCart() {
