@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pki_frontend_app/auth.dart';
@@ -5,6 +6,7 @@ import 'package:pki_frontend_app/calendar_pop_up.dart';
 import 'package:pki_frontend_app/cart.dart';
 import 'package:pki_frontend_app/cart_page_item.dart';
 import 'package:pki_frontend_app/date_picker_field.dart';
+import 'package:pki_frontend_app/discount_text_field.dart';
 import 'package:pki_frontend_app/resizer.dart';
 
 class CartPage extends StatefulWidget {
@@ -157,6 +159,24 @@ class CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<List<String>> userCartView = [];
+    if (userCart.isNotEmpty) {
+      var prev = List.of(userCart[0]);
+      userCartView.add(List.of(prev));
+      userCartView[0].add("1");
+      if (userCart.length > 1) {
+        for (int index = 1; index < userCart.length; index++) {
+          if (listEquals(prev, userCart[index])) {
+            userCartView[userCartView.length - 1][3] =
+                (int.parse(userCartView[userCartView.length - 1][3]) + 1).toString();
+          } else {
+            userCartView.add(List.of(userCart[index]));
+            userCartView[userCartView.length - 1].add('1');
+            prev = List.of(userCart[index]);
+          }
+        }
+      }
+    }
     return AnimatedPositioned(
       duration: Duration(milliseconds: 300),
       curve: Curves.easeInOut,
@@ -164,7 +184,7 @@ class CartPageState extends State<CartPage> {
       left: _left + 20,
       child: Container(
         width: 350.w,
-        height: 620.h,
+        height: 700.h,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -254,7 +274,7 @@ class CartPageState extends State<CartPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: (userCart as List)
+                      children: (userCartView as List)
                         .map<Widget>(
                           (item) => CartPageItem(item: item)
                         ).toList(),
@@ -285,6 +305,32 @@ class CartPageState extends State<CartPage> {
                 ],
               )
             ),
+
+
+
+
+
+
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Скидка',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.sp,
+                    ),
+                  ),
+                ),
+                DiscountTextField()
+              ],
+            ),
+
+
+
+            
             TextButton(
               onPressed: () {
                 if (backgroundColorButton == Color.fromARGB(150, 0, 158, 58)) {

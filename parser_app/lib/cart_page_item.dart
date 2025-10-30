@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pki_frontend_app/cart.dart';
 import 'package:pki_frontend_app/resizer.dart';
 import 'package:pki_frontend_app/switch.dart';
+import 'package:pki_frontend_app/cart_page_item_amount.dart';
+
 
 class CartPageItem extends StatefulWidget {
   final item;
@@ -18,10 +20,24 @@ class CartPageItem extends StatefulWidget {
 class CartPageItemState extends State<CartPageItem> {
   
   final _switcherKey = GlobalKey<SwitcherState>();
+  final _amountKey = GlobalKey<CartPageItemAmountState>();
 
   void onPress(bool isOn) {
     final String condition = !isOn ? '1' : '0';
     Cart.updateItemCondition(widget.item[0], widget.item[1], condition);
+  }
+
+  void onChangedAmount(String mode) {     //обработка нажатия на +-
+    if (mode == '+') {
+      try {
+        Cart.addToCart(widget.item[0], widget.item[1], widget.item[2]);
+      } catch (_) {
+        Cart.addToCart(widget.item[0], widget.item[1], '');
+      }
+    }
+    else if (mode == '-') {
+      Cart.removeFromCart(widget.item[0], widget.item[1]);
+    }
   }
 
   @override
@@ -30,13 +46,29 @@ class CartPageItemState extends State<CartPageItem> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text(
-          widget.item[1],
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 14.sp,
-            color: Colors.black
-          ),
+        //Row для ряда
+        //Свойства отсутствуют для работы Expanded
+        //Expanded позволяет занять объекту всё свободное место в контейнере,
+        //которое не занято другими элементами
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                widget.item[1],
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.sp,
+                  color: Colors.black
+                ),
+              ),
+            ),
+            //импорт модуля для кнопочек
+            CartPageItemAmount(
+              key: _amountKey,
+              onPress: onChangedAmount,
+              amount: int.parse(widget.item[3]),
+            )
+          ],
         ),
         widget.item[2] != ''
         ? SizedBox(

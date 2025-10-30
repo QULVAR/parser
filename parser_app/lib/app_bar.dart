@@ -58,31 +58,31 @@ class CustomAppBarState extends State<CustomAppBar> {
                 borderRadius: BorderRadius.circular(25.sp)
               ),
               child: TextButton(
-              onPressed: () {
-                setState(() {
-                  selectedPage = 0;
-                });
-                widget.changePage(selectedPage);
-              },
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                shadowColor: Colors.transparent,
-                overlayColor: Colors.transparent,
+                onPressed: () {
+                  setState(() {
+                    selectedPage = 0;
+                  });
+                  widget.changePage(selectedPage);
+                },
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  shadowColor: Colors.transparent,
+                  overlayColor: Colors.transparent,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(mainAxisSize: MainAxisSize.min, children: [
+                      Image.asset('assets/icons/logo.png', width: 28.sp, height: 28.sp),
+                      SizedBox(width: 6.w),
+                      Text('Амерта', style: TextStyle(fontSize: 20.sp, color: Colors.black)),
+                    ]),
+                    SizedBox(height: 5.h,),
+                    Text('Каталог', style: TextStyle(fontSize: 16.sp, color: Color.fromARGB(255, 127, 127, 127))),
+                  ],
+                ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(mainAxisSize: MainAxisSize.min, children: [
-                    Image.asset('assets/icons/logo.png', width: 28.sp, height: 28.sp),
-                    SizedBox(width: 6.w),
-                    Text('Амерта', style: TextStyle(fontSize: 20.sp, color: Colors.black)),
-                  ]),
-                  SizedBox(height: 5.h,),
-                  Text('Каталог', style: TextStyle(fontSize: 16.sp, color: Color.fromARGB(255, 127, 127, 127))),
-                ],
-              ),
-            ),
             ),
             Positioned.fill(
               left: 0, right: null,

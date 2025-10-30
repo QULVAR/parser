@@ -15,8 +15,10 @@ class Cart {
   }
 
   static void removeFromCart(String category, String item) {
-    _userCart.removeWhere((pair) => pair[0] == category && pair[1] == item);
-    _userCartForRequest.removeWhere((pair) => pair[0] == category && pair[1] == item);
+    final i = _userCart.indexWhere((pair) => pair[0] == category && pair[1] == item);
+    if (i != -1) _userCart.removeAt(i);
+    final j = _userCartForRequest.indexWhere((pair) => pair[0] == category && pair[1] == item);
+    if (j != -1) _userCartForRequest.removeAt(j);
     if (cartPageKey != null) {
       cartPageKey!.currentState?.buttonColorSelector();
     }
