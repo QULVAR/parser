@@ -15,6 +15,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
+from .models import PromoCode
 
 
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
@@ -335,7 +336,8 @@ def get_cost(request):
     global RAW_PARSE
     categories_choice = request.data.get("data", [])
     date_str = request.data.get("start")
-    date_str2   = request.data.get("end")
+    date_str2 = request.data.get("end")
+    promocode = request.data.get("promo")
     date_obj = dt.strptime(date_str, '%d-%m-%Y')
     weekday = date_obj.weekday()
     date_obj2 = dt.strptime(date_str2, '%d-%m-%Y')
@@ -381,4 +383,16 @@ def get_cost(request):
                 for choice in categories_choice:
                     result += categories[choice[0]][choice[1]][0] * diff_in_days
                 diff_in_days = 0
-    return JsonResponse({'result': result})
+    if promocode != '':
+        try:
+            promo = PromoCode.objects.get(code=promocode)
+        except PromoCode.DoesNotExist:
+            promo = None
+        if promo:
+            result *= (100 - promo.discount) / 100
+    else:
+        promo = True
+    return JsonResponse({
+        'result': result,
+        'promo_status': 'success' if promo else 'promo_404'
+    })

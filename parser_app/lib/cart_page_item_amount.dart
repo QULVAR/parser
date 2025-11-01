@@ -36,7 +36,7 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 64.sp,
+      width: 72.sp,
       child: Row(
         children: [
           TextButton(
@@ -57,17 +57,20 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
               shadowColor: Colors.transparent,
               overlayColor: Colors.transparent,
             ),
-            child: Image.asset('assets/icons/minus.png', width: 14.sp, height: 14.sp),
+            child: Image.asset('assets/icons/minus.png', width: 18.sp, height: 18.sp),
           ),
           Expanded(
-            child: Text(
-              amount.toString(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 14.sp,
-                color: Colors.black
-              ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 2.sp, horizontal: 0),
+              child: Text(
+                amount.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.sp,
+                  color: Colors.black
+                ),
+              )
             )
           ),
           TextButton(
@@ -84,7 +87,7 @@ class CartPageItemAmountState extends State<CartPageItemAmount> {
               shadowColor: Colors.transparent,
               overlayColor: Colors.transparent,
             ),
-            child: Image.asset('assets/icons/plus.png', width: 14.sp, height: 14.sp),
+            child: Image.asset('assets/icons/plus.png', width: 18.sp, height: 18.sp),
           ),
         ],
       )

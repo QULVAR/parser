@@ -49,18 +49,24 @@ class CartPageState extends State<CartPage> {
   }
 
   Future<void> buttonPress() async {
+    String promocode = (_discountTextFieldKey.currentState?.controller.text ?? '').trim();
     final resp = await Api.I.getCost(
       Cart.getCartRequest(),
       convetationDateToString(_datePickerValue1),
-      convetationDateToString(_datePickerValue2)
+      convetationDateToString(_datePickerValue2),
+      promocode
     );
     setState(() {
       sum = resp['result'].toDouble();
     });
+    if (resp['promo_status'] == 'promo_404') {
+      _discountTextFieldKey.currentState?.showMiniToast("Отсутствует");
+    }
   }
 
   final _datePickerKey1 = GlobalKey<DatePickerFieldState>();
   final _datePickerKey2 = GlobalKey<DatePickerFieldState>();
+  final _discountTextFieldKey = GlobalKey<DiscountTextFieldState>();
   DateTime? _datePickerValue1;
   DateTime? _datePickerValue2;
   Color backgroundColorButton = Color(0xFFE6E6E6);
@@ -295,53 +301,51 @@ class CartPageState extends State<CartPage> {
               ),
             ),
             Container(
-              height: 40.h,
+              height: 57.h,
               padding: EdgeInsets.only(top: 10.h, left: 15.w),
-              child: Row(
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Всего: ',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.sp,
-                    ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Промокод',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
+                      DiscountTextField(
+                        key: _discountTextFieldKey,
+                      )
+                    ],
                   ),
-                  Text(
-                    '$sum ₽',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.sp,
-                    ),
-                  )
+                  Row(
+                    children: [
+                      Text(
+                        'Всего: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                      Text(
+                        '$sum ₽',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp,
+                        ),
+                      )
+                    ],
+                  ),
                 ],
-              )
+              ),
             ),
-
-
-
-
-
-
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Скидка',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.sp,
-                    ),
-                  ),
-                ),
-                DiscountTextField()
-              ],
-            ),
-
-
-
-            
             TextButton(
               onPressed: () {
                 if (backgroundColorButton == Color.fromARGB(150, 0, 158, 58)) {

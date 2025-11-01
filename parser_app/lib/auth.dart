@@ -162,12 +162,14 @@ class Api {
   Future<Map<String, dynamic>> getCost(
   List<List<String>> matrix,
   String start,
-  String end
+  String end,
+  [String promocode = '']
   ) async {
     final resp = await authedPost('/api/get_cost/', body: {
       'data': matrix,
       'start': start,
-      'end': end
+      'end': end,
+      'promo': promocode
     });
     print("request sent to /api/get_cost/");
 
