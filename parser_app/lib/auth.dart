@@ -179,4 +179,14 @@ class Api {
     final decoded = jsonDecode(resp.body);
     return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
   }
+
+  Future<Map<String, dynamic>> getPromos() async {
+    final resp = await authedPost('/api/get_promos/');
+    print("request sent to /api/get_promos/");
+    if (resp.statusCode < 200 || resp.statusCode >= 300) {
+      throw Exception('getPromos failed: ${resp.statusCode} ${resp.body}');
+    }
+    final decoded = jsonDecode(resp.body);
+    return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
+  }
 }

@@ -36,24 +36,23 @@ class TintContainerState extends State<TintContainer> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-            top: 0,
-            left: _left,
-            child: GestureDetector(
-      onTap: widget.gestureAction,
-      child: AbsorbPointer(
-        absorbing: true,
-        child: AnimatedContainer(
-              duration: Duration(milliseconds: 500),
-              curve: Curves.easeInOut,
-              height: widget.height,
-              width: widget.width,
-              decoration: BoxDecoration(
-                color: Color.fromARGB(_opacity, 0, 0, 0)
+      top: 0,
+      left: _left,
+      child: GestureDetector(
+        onTap: widget.gestureAction,
+        child: AbsorbPointer(
+          absorbing: true,
+          child: AnimatedContainer(
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+                height: widget.height,
+                width: widget.width,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(_opacity, 0, 0, 0)
+                ),
               ),
-            ),
-      )
-          ),
-          );
+        )
+      ),
+    );
   }
-
 }

@@ -23,10 +23,9 @@ class PromoCode(models.Model):
         ]
 
     def save(self, *args, **kwargs):
-        # Нормализуем: убираем пробелы по краям и приводим к верхнему регистру (по желанию)
         if self.code is not None:
-            self.code = self.code.strip().upper()
+            self.code = self.code.strip()
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.code} ({self.discount}%)"
+        return f"{self.code} {self.discount}"

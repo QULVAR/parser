@@ -237,16 +237,82 @@ def get_sum(request):
 
 # ====== 👇 ДОБАВИТЬ ВНИЗ parser/views.py 👇 ======
 
+
+def is_I_admin(request):
+    u = request.user
+    file_path = os.path.join(CACHE_DIR, "admins.json")
+    with open(file_path, "r", encoding="utf-8") as f:
+        admins = json.load(f)["admins"]
+    return u.username in admins
+
 # "кто я" — аналог request.user в шаблоне
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def me(request):
     u = request.user
+    file_path = os.path.join(CACHE_DIR, "admins.json")
+    with open(file_path, "r", encoding="utf-8") as f:
+        admins = json.load(f)["admins"]
+    role = 'admin' if is_I_admin(request) else 'user'
     return JsonResponse({
         "id": u.id,
         "username": u.username,
         "email": getattr(u, "email", None),
+        "role": role
     })
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def promos(request):
+    if not is_I_admin(request):
+        return JsonResponse({"Unauthorized" : 0})
+    all_promos = PromoCode.objects.all()
+    result = dict()
+    for i in all_promos:
+        promo, percent = str(i).split()
+        result[promo] = int(percent)
+    return JsonResponse(result)
+    
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def promos_create(request):
+    if not is_I_admin(request):
+        return JsonResponse({"Unauthorized" : 0})
+    try:
+        promo = PromoCode(code=request.data.get("promo"), discount=request.data.get("percent"))
+        promo.save()
+        return JsonResponse({"status": "success"})
+    except:
+        return JsonResponse({"status": "error"})
+        
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def promos_update(request):
+    if not is_I_admin(request):
+        return JsonResponse({"Unauthorized" : 0})
+    try:
+        promo = PromoCode.objects.get(code=request.data.get("promo"))
+        promo.code = request.data.get("new_promo")
+        promo.discount = request.data.get("percent")
+        promo.save()
+        return JsonResponse({"status": "success"})
+    except:
+        return JsonResponse({"status": "error"})
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def promos_update(request):
+    if not is_I_admin(request):
+        return JsonResponse({"Unauthorized" : 0})
+    try:
+        promo = PromoCode.objects.get(code=request.data.get("promo"))
+        promo.delete()
+        return JsonResponse({"status": "success"})
+    except:
+        return JsonResponse({"status": "error"})
 
 # логаут — баним присланный refresh
 @api_view(["POST"])
