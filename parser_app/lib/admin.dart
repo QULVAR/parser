@@ -12,6 +12,10 @@ class Admin extends StatefulWidget {
 }
 
 class AdminState extends State<Admin> {
+  final GlobalKey<AdminFileState> adminFilePageKey = GlobalKey<AdminFileState>();
+  final GlobalKey<AdminPromoState> adminPromoPageKey = GlobalKey<AdminPromoState>();
+  final GlobalKey<AdminAccountsState> adminAccountsPageKey = GlobalKey<AdminAccountsState>();
+
   double _left = -390.w;
 
   void moveToX (double left) {
@@ -20,12 +24,12 @@ class AdminState extends State<Admin> {
     });
   }
 
+  void loadData() {
+    adminPromoPageKey.currentState?.loadPromos();
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    final adminFilePageKey = GlobalKey<AdminFileState>();
-    final adminPromoPageKey = GlobalKey<AdminPromoState>();
-    final adminAccountsPageKey = GlobalKey<AdminAccountsState>();
 
     return AnimatedPositioned(
       duration: Duration(milliseconds: 300),
@@ -49,7 +53,7 @@ class AdminState extends State<Admin> {
             ),
             SizedBox(height: 20.h,),
             AdminPromo(
-              key: adminPromoPageKey,
+              key: adminPromoPageKey
             ),
             SizedBox(height: 20.h,),
             AdminAccounts(

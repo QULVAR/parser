@@ -9,12 +9,15 @@ class AdminPromoItem extends StatefulWidget {
   final String promo;
   final String percent;
   final Widget divideLine;
+  final Future<void> Function() reloadPromos;
+  
 
   const AdminPromoItem({
     super.key,
     required this.promo,
     required this.percent,
-    required this.divideLine
+    required this.divideLine,
+    required this.reloadPromos,
   });
 
   @override
@@ -33,27 +36,13 @@ class AdminPromoItemState extends State<AdminPromoItem> {
     mask: '##',
     filter: {"#": RegExp(r'\d')},
   );
+  String editedPromo = "";
   String promoText = "";
   int percents = 0;
 
   @override
   void initState() {
     super.initState();
-    if (setUpTextPromo) {
-        _promoController.value = TextEditingValue(text: widget.promo);
-        setUpTextPromo = false;
-    }
-
-    if (setUpTextPercent) {
-      _percentFormatter.clear();
-      final formatted = _percentFormatter.formatEditUpdate(
-        TextEditingValue.empty,
-        TextEditingValue(text: widget.percent),
-      );
-      _percentController.value = formatted;
-      setUpTextPercent = false;
-    }
-
     _promoController.addListener(() {
       promoText = _promoController.text;
       print(promoText);
@@ -69,6 +58,23 @@ class AdminPromoItemState extends State<AdminPromoItem> {
       }
       print(percents);
     });
+    setUpWidget();
+  }
+
+  void setUpWidget() {
+    if (setUpTextPromo) {
+      _promoController.value = TextEditingValue(text: widget.promo);
+      setUpTextPromo = false;
+    }
+    if (setUpTextPercent) {
+      _percentFormatter.clear();
+      final formatted = _percentFormatter.formatEditUpdate(
+        TextEditingValue.empty,
+        TextEditingValue(text: widget.percent),
+      );
+      _percentController.value = formatted;
+      setUpTextPercent = false;
+    }
   }
 
   final oneRowHeight = 30.h;
@@ -79,6 +85,7 @@ class AdminPromoItemState extends State<AdminPromoItem> {
     if (formStateEdit) {
       setState(() {
         activeIconEdit = "check";
+        editedPromo = promoText;
       });
     }
     else {
@@ -88,9 +95,51 @@ class AdminPromoItemState extends State<AdminPromoItem> {
     }
   }
 
-  void updateItem() {
+  void clearIfInitialEmpty() {
+    final promoIn = widget.promo.trim();
+    final percentIn = widget.percent.trim();
 
+    if (promoIn.isEmpty && percentIn.isEmpty) {
+      _promoController.text = "";
+      _percentFormatter.clear();
+      _percentController.text = "";
+
+      promoText = "";
+      editedPromo = "";
+      percents = 0;
+
+      setUpTextPromo = false;
+      setUpTextPercent = false;
+    }
   }
+
+  Future<void> updatePromos() async {
+    final resp = await Api.I.updatePromo(editedPromo, promoText, percents.toString());
+    if (!mounted) return;
+    final promos_resp = resp;
+    if (promos_resp["status"] == "error") {
+      print("error");
+    }
+    else {
+      print("success");
+    }
+    widget.reloadPromos();
+    clearIfInitialEmpty();
+  }
+
+  Future<void> deletePromos() async {
+    final resp = await Api.I.deletePromo(promoText);
+    if (!mounted) return;
+    final promos_resp = resp;
+    if (promos_resp["status"] == "error") {
+      print("error");
+    }
+    else {
+      print("success");
+    }
+    widget.reloadPromos();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +173,7 @@ class AdminPromoItemState extends State<AdminPromoItem> {
                 textAlign: TextAlign.center,
               )
               : Text(
-                widget.promo,
+                _promoController.text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 15
@@ -167,7 +216,7 @@ class AdminPromoItemState extends State<AdminPromoItem> {
                 ],
               ) 
               : Text(
-                "${widget.percent} %",
+                "${_percentController.text} %",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 15
@@ -181,6 +230,9 @@ class AdminPromoItemState extends State<AdminPromoItem> {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
+                  if (activeIconEdit == "check") {
+                    updatePromos();
+                  }
                   formStateEdit = !formStateEdit;
                   changeFormState();
                 },
@@ -201,7 +253,9 @@ class AdminPromoItemState extends State<AdminPromoItem> {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                  
+                  if (promoText != "") {
+                    deletePromos();
+                  }
                 },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,

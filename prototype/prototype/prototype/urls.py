@@ -21,6 +21,9 @@ urlpatterns = [
     # --- защищённые версии твоих ручек (требуют Bearer access) ---
     path('api/get_sum/', pviews.get_sum_secure),
     path('api/get_promos/', pviews.promos),
+    path('api/del_promos/', pviews.promos_delete),
+    path('api/upd_promos/', pviews.promos_update),
+    path('api/create_promos/', pviews.promos_create),
     path('api/get_goods/', pviews.get_cached_goods_secure),
     path('api/search/', pviews.get_by_search_secure),
     path('api/write_cache/', pviews.write_file_secure),

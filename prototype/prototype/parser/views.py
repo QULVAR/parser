@@ -280,7 +280,15 @@ def promos_create(request):
     if not is_I_admin(request):
         return JsonResponse({"Unauthorized" : 0})
     try:
-        promo = PromoCode(code=request.data.get("promo"), discount=request.data.get("percent"))
+        promo = PromoCode(code=request.data.get("new_promo"), discount=request.data.get("percent"))
+        promo.save()
+        return JsonResponse({"status": "success"})
+    except:
+        return JsonResponse({"status": "error"})
+
+def create_promo(request):
+    try:
+        promo = PromoCode(code=request.data.get("new_promo"), discount=request.data.get("percent"))
         promo.save()
         return JsonResponse({"status": "success"})
     except:
@@ -299,12 +307,12 @@ def promos_update(request):
         promo.save()
         return JsonResponse({"status": "success"})
     except:
-        return JsonResponse({"status": "error"})
+        return create_promo(request)
 
 
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
-def promos_update(request):
+def promos_delete(request):
     if not is_I_admin(request):
         return JsonResponse({"Unauthorized" : 0})
     try:

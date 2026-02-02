@@ -189,4 +189,37 @@ class Api {
     final decoded = jsonDecode(resp.body);
     return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
   }
+
+  Future<Map<String, dynamic>> updatePromo(
+    String promo,
+    String newPromo,
+    String percent
+  ) async {
+    final resp = await authedPost('/api/upd_promos/', body: {
+      "promo": promo,
+      "new_promo": newPromo,
+      "percent": percent
+    });
+    print("request sent to /api/upd_promos/");
+    if (resp.statusCode < 200 || resp.statusCode >= 300) {
+      throw Exception('getPromos failed: ${resp.statusCode} ${resp.body}');
+    }
+    final decoded = jsonDecode(resp.body);
+    return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
+  }
+
+  Future<Map<String, dynamic>> deletePromo(
+    String promo,
+  ) async {
+    final resp = await authedPost('/api/del_promos/', body: {
+      "promo": promo,
+    });
+    print("request sent to /api/del_promos/");
+    if (resp.statusCode < 200 || resp.statusCode >= 300) {
+      throw Exception('getPromos failed: ${resp.statusCode} ${resp.body}');
+    }
+    final decoded = jsonDecode(resp.body);
+    return decoded is Map<String, dynamic> ? decoded : {'result': decoded};
+  }
+
 }

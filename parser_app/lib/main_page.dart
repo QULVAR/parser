@@ -44,6 +44,7 @@ class HomePageState extends State<HomePage> {
       case 0:
         flagAnimation = true;
         _profilePageKey.currentState?.moveToX(-390.w);
+        _profilePageKey.currentState?.closeAdminPage();
         _cartPageKey.currentState?.moveToX(390.w);
         _tintPageKey1.currentState?.changeOpacity(0);
         _appBarKey.currentState?.changePage(0);
@@ -69,6 +70,7 @@ class HomePageState extends State<HomePage> {
         _tintPageKey1.currentState?.moveToX(0);
         _appBarKey.currentState?.changePage(2);
         _profilePageKey.currentState?.moveToX(-390.w);
+        _profilePageKey.currentState?.closeAdminPage();
         _cartPageKey.currentState?.getUserCart();
         _cartPageKey.currentState?.moveToX(0);
         break;

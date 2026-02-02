@@ -40,9 +40,10 @@ class ProfileState extends State<Profile> {
   }
 
   void openAdminPage() {
+    _adminPageKey.currentState?.loadData();
     _tintPageKey.currentState?.changeOpacity(120);
     _tintPageKey.currentState?.moveToX(0);
-    _adminPageKey.currentState?.moveToX(0);  
+    _adminPageKey.currentState?.moveToX(0);
   }
 
   void closeAdminPage() {

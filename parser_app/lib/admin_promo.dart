@@ -5,7 +5,9 @@ import 'widgets.dart';
 import 'resizer.dart';
 
 class AdminPromo extends StatefulWidget {
-  const AdminPromo({super.key});
+  const AdminPromo({
+    super.key
+  });
 
   @override
   State<AdminPromo> createState() => AdminPromoState();
@@ -17,6 +19,7 @@ class AdminPromoState extends State<AdminPromo> {
   final ScrollController _scrollController = ScrollController();
 
   Future<void> loadPromos() async {
+    print('loadPromos');
     final resp = await Api.I.getPromos();
     if (!mounted) return;
     final promos_resp = resp;
@@ -30,20 +33,20 @@ class AdminPromoState extends State<AdminPromo> {
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
-    loadPromos();
-  }
-
   final oneRowHeight = 30.h;
   final tableWidth = 270.w;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300.w,
-      height: 200.h,
+      height: 207.h,
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 235, 235, 235),
@@ -86,19 +89,24 @@ class AdminPromoState extends State<AdminPromo> {
             ],
           ),
           horizontalDividingLine(tableWidth),
-          SingleChildScrollView(
-            controller: _scrollController,
-            child: Column(
-              children: promos.isNotEmpty
-              ? promos.map<Widget>(
-                  (item) => AdminPromoItem(
-                    key: ValueKey('${item[0]}|${item[1]}'),
+          Expanded(
+            child: Scrollbar(
+              controller: _scrollController,
+              child: ListView.builder(
+                controller: _scrollController,
+                padding: EdgeInsets.zero,
+                itemCount: promos.isNotEmpty ? promos.length : 0,
+                itemBuilder: (context, index) {
+                  final item = promos[index];
+                  return AdminPromoItem(
+                    key: ValueKey('${item[0]}'),
                     promo: item[0],
                     percent: "${item[1]}",
                     divideLine: horizontalDividingLine(tableWidth),
-                  ),
-                ).toList()
-              : [Text('')]
+                    reloadPromos: loadPromos,
+                  );
+                },
+              ),
             ),
           ),
         ],
