@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+
+title Use Case Амерта
+
+actor "Клиент" as Client
+
+usecase "Авторизация" as UC_AUTH
+usecase "Импорт каталога" as UC_IMPORT
+usecase "Добавление позиции в корзину" as UC_ADD
+usecase "Удаление позиции из корзины" as UC_REMOVE
+usecase "Изменение количества позиции" as UC_EDIT
+usecase "Поиск позиции" as UC_SEARCH
+usecase "Просмотр личного кабинета" as UC_PROFILE
+usecase "Выход из системы" as UC_LOGOUT
+usecase "Доступ к админ-панели" as UC_ADMIN_PANEL
+usecase "Просмотр корзины" as UC_READ_CART
+usecase "Расчет стоимости аренды" as UC_CALC
+usecase "Выбор дат в календаре" as UC_CALENDAR
+usecase "Применение промокода" as UC_PROMO
+usecase "Экспорт сметы" as UC_EXPORT
+usecase "Создание промокода" as UC_CREATE_PROMO
+usecase "Удаление промокода" as UC_DELETE_PROMO
+usecase "Создание пользователя" as UC_CREATE_USER
+usecase "Удаление пользователя" as UC_DELETE_USER
+
+usecase "Главная страница" as UC_MAIN_PAGE
+
+' Связи Клиента
+Client --> UC_PROFILE
+Client -left-> UC_MAIN_PAGE
+Client -right-> UC_READ_CART
+Client -up-> UC_AUTH
+
+' Специальные связи (include и extend поменяны местами, направления исправлены)
+UC_ADMIN_PANEL .up.> UC_PROFILE : <include>
+
+note top of link
+  для админа
+end note
+
+UC_LOGOUT <.left. UC_PROFILE : <extend>
+
+UC_ADD <.right. UC_MAIN_PAGE : <extend>
+UC_REMOVE <.down. UC_MAIN_PAGE : <extend>
+UC_SEARCH <.right. UC_MAIN_PAGE : <extend>
+UC_ADD -[hidden]-> UC_SEARCH
+
+UC_PROMO <.down. UC_READ_CART : <extend>
+UC_EDIT <.down. UC_READ_CART : <extend>
+UC_EDIT -[hidden]> UC_PROMO
+UC_REMOVE <.right. UC_EDIT : <extend>
+UC_CALENDAR <.left. UC_READ_CART : <extend>
+UC_CALC .left.> UC_CALENDAR : <include>
+UC_EXPORT .down.> UC_CALC : <include>
+
+'Админ-панель
+UC_IMPORT <.down. UC_ADMIN_PANEL : <extend>
+UC_DELETE_PROMO <.left. UC_ADMIN_PANEL : <extend>
+UC_CREATE_PROMO <.right. UC_ADMIN_PANEL : <extend>
+UC_CREATE_USER <.down. UC_ADMIN_PANEL : <extend>
+UC_DELETE_USER <.down. UC_ADMIN_PANEL : <extend>
+
+note as N1
+  Админ также имеет доступ
+  ко всем функциям клиента
+  (наследование не показано
+  для читаемости диаграммы)
+end note
+
+@enduml
