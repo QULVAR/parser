@@ -1,0 +1,178 @@
+{
+    "data": {
+        "getAllTransactionsWithDiscount": {
+            "allConsumptionWh": 3829.1,
+            "allPrice": 71741.1,
+            "transactionStatByCustomer": [
+                {
+                    "phoneNumber": "79615101551",
+                    "stat": {
+                        "allConsumptionWh": 302.2,
+                        "allPrice": 5439.6
+                    }
+                },
+                {
+                    "phoneNumber": "79892723167",
+                    "stat": {
+                        "allConsumptionWh": 403.2,
+                        "allPrice": 7322
+                    }
+                },
+                {
+                    "phoneNumber": "79187786147",
+                    "stat": {
+                        "allConsumptionWh": 95.5,
+                        "allPrice": 1886.7
+                    }
+                },
+                {
+                    "phoneNumber": "79280061067",
+                    "stat": {
+                        "allConsumptionWh": 112.8,
+                        "allPrice": 2338.4
+                    }
+                },
+                {
+                    "phoneNumber": "79286680652",
+                    "stat": {
+                        "allConsumptionWh": 147.1,
+                        "allPrice": 2759.4
+                    }
+                },
+                {
+                    "phoneNumber": "79298336826",
+                    "stat": {
+                        "allConsumptionWh": 312.1,
+                        "allPrice": 5765.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                },
+                {
+                    "phoneNumber": "79183594999",
+                    "stat": {
+                        "allConsumptionWh": 1514.5,
+                        "allPrice": 29098.2
+                    }
+                },
+                {
+                    "phoneNumber": "79182644868",
+                    "stat": {
+                        "allConsumptionWh": 475.8,
+                        "allPrice": 8600
+                    }
+                },
+                {
+                    "phoneNumber": "79284665009",
+                    "stat": {
+                        "allConsumptionWh": 465.9,
+                        "allPrice": 8531.4
+                    }
+                }
+            ]
+        }
+    }
+}
