@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'resizer.dart';
 
 class TintContainer extends StatefulWidget {
   final VoidCallback gestureAction;

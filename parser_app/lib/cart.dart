@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/cart_page.dart';
-import 'package:pki_frontend_app/catalog_list_view_builder.dart';
+import 'cart_page.dart';
+import 'catalog_list_view_builder.dart';
 
 class Cart {
   static List<List<String>> _userCart = [];

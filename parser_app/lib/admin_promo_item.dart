@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'auth.dart';
+import 'app_message_box.dart';
 import 'resizer.dart';
 import 'widgets.dart';
 
@@ -114,30 +115,57 @@ class AdminPromoItemState extends State<AdminPromoItem> {
   }
 
   Future<void> updatePromos() async {
-    final resp = await Api.I.updatePromo(editedPromo, promoText, percents.toString());
-    if (!mounted) return;
-    final promos_resp = resp;
-    if (promos_resp["status"] == "error") {
-      print("error");
+    if ((promoText != "") && (percents.toString() != "0")) {
+      try {
+        final resp = await Api.I.updatePromo(editedPromo, promoText, percents.toString());
+        if (!mounted) return;
+        final promosResp = resp;
+        if (promosResp["status"] == "error") {
+          await showAppMessageBox(
+            context,
+            title: 'Ошибка',
+            message: 'Произошла ошибка',
+          );
+          return;
+        }
+        await widget.reloadPromos();
+        clearIfInitialEmpty();
+      } catch (_) {
+        if (!mounted) return;
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+      }
     }
     else {
-      print("success");
+      clearIfInitialEmpty();
     }
-    widget.reloadPromos();
-    clearIfInitialEmpty();
   }
 
   Future<void> deletePromos() async {
-    final resp = await Api.I.deletePromo(promoText);
-    if (!mounted) return;
-    final promos_resp = resp;
-    if (promos_resp["status"] == "error") {
-      print("error");
+    try {
+      final resp = await Api.I.deletePromo(promoText);
+      if (!mounted) return;
+      final promosResp = resp;
+      if (promosResp["status"] == "error") {
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+        return;
+      }
+      await widget.reloadPromos();
+    } catch (_) {
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
     }
-    else {
-      print("success");
-    }
-    widget.reloadPromos();
   }
 
 
@@ -164,7 +192,9 @@ class AdminPromoItemState extends State<AdminPromoItem> {
                   isCollapsed: true,
                   contentPadding: EdgeInsets.only(bottom: 0),
                   hintText: 'Promo',
-                  hintStyle: null,
+                  hintStyle: TextStyle(
+                    color: Color.fromARGB(90, 0, 0, 0)
+                  ),
                   hintFadeDuration: Duration(milliseconds: 300)
                 ),
                 style: TextStyle(
@@ -202,7 +232,9 @@ class AdminPromoItemState extends State<AdminPromoItem> {
                         isCollapsed: true,
                         contentPadding: EdgeInsets.only(bottom: 0),
                         hintText: '5',
-                        hintStyle: null,
+                        hintStyle: TextStyle(
+                          color: Color.fromARGB(90, 0, 0, 0)
+                        ),
                         hintFadeDuration: Duration(milliseconds: 300)
                       ),
                       textAlign: TextAlign.center,
@@ -252,9 +284,17 @@ class AdminPromoItemState extends State<AdminPromoItem> {
               width: 30.w,
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
                   if (promoText != "") {
-                    deletePromos();
+                    await showAppMessageBox(
+                      context,
+                      title: 'Подтверждение',
+                      message: 'Удалить промокод?',
+                      buttons: AppMessageBoxButtons.cancelOk,
+                      onOk: () async {
+                        await deletePromos();
+                      },
+                    );
                   }
                 },
                 style: TextButton.styleFrom(

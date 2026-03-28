@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
 import 'admin_promo_item.dart';
+import 'app_message_box.dart';
 import 'widgets.dart';
 import 'resizer.dart';
 
@@ -19,18 +20,37 @@ class AdminPromoState extends State<AdminPromo> {
   final ScrollController _scrollController = ScrollController();
 
   Future<void> loadPromos() async {
-    print('loadPromos');
-    final resp = await Api.I.getPromos();
-    if (!mounted) return;
-    final promos_resp = resp;
-    var promos_list = [];
-    for (var key in promos_resp.keys) {
-      promos_list.add([key, promos_resp[key]]);
+    try {
+      final resp = await Api.I.getPromos();
+      if (!mounted) return;
+
+      if (resp["status"] == "error") {
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+        return;
+      }
+
+      final promosResp = resp;
+      var promosList = [];
+      for (var key in promosResp.keys) {
+        promosList.add([key, promosResp[key]]);
+      }
+      promosList.add(["", ""]);
+
+      setState(() {
+        promos = promosList;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
     }
-    promos_list.add(["", ""]);
-    setState(() {
-      promos = promos_list;
-    });
   }
 
   final oneRowHeight = 30.h;

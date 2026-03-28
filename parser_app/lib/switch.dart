@@ -6,12 +6,14 @@ class Switcher extends StatefulWidget {
   final double height;
   final double width;
   final bool isOn;
+  final String animationName;
 
   Switcher({
     super.key,
     required this.onPress,
     required this.height,
     required this.width,
+    required this.animationName,
     this.isOn = false
   });
 
@@ -22,12 +24,14 @@ class Switcher extends StatefulWidget {
 class SwitcherState extends State<Switcher> with SingleTickerProviderStateMixin {
   late final AnimationController _c;
   bool isOn = false;
+  late String lottieAnimationAsset;
 
   @override
   void initState() {
     super.initState();
     _c = AnimationController(vsync: this);
     isOn = widget.isOn;
+    lottieAnimationAsset = 'assets/animations/${widget.animationName}.json';
   }
 
   @override
@@ -43,10 +47,14 @@ class SwitcherState extends State<Switcher> with SingleTickerProviderStateMixin 
     widget.onPress(isOn);
 
     final target = isOn ? 0.0 : 1.0;
+    final curve = target > _c.value
+        ? Curves.easeOutCubic
+        : Curves.easeInCubic;
+
     await _c.animateTo(
       target,
       duration: _c.duration,
-      curve: Curves.easeOutCubic,
+      curve: curve,
     );
 
     if (!mounted) return;
@@ -63,7 +71,7 @@ class SwitcherState extends State<Switcher> with SingleTickerProviderStateMixin 
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints(),
       icon: Lottie.asset(
-        'assets/animations/checkbox.json',
+        lottieAnimationAsset,
         height: widget.height,
         width: widget.width,
         controller: _c,

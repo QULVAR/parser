@@ -26,6 +26,7 @@ class AdminState extends State<Admin> {
 
   void loadData() {
     adminPromoPageKey.currentState?.loadPromos();
+    adminAccountsPageKey.currentState?.loadAccounts();
   }
 
   @override
@@ -38,7 +39,7 @@ class AdminState extends State<Admin> {
       left: _left + 20,
       child: Container(
         width: 350.w,
-        height: 600.h,
+        height: 635.h,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'resizer.dart';
 
 
 class DiscountTextField extends StatefulWidget {
@@ -99,21 +99,26 @@ class DiscountTextFieldState extends State<DiscountTextField> with TickerProvide
               LengthLimitingTextInputFormatter(9)
             ],
             maxLines: 1,
+            textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
               border: InputBorder.none,
+              isDense: true,
+              contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
               hintText: 'Промокод',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 15.sp,
                 letterSpacing: 0,
-                color: Color(0xFF929292)
+                color: Color(0xFF929292),
+                height: 1,
               ),
               hintFadeDuration: Duration(milliseconds: 300),
             ),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 15.sp,
-              color: Color(0xFF585858)
+              color: Color(0xFF585858),
+              height: 1,
             ),
           ),
         ),

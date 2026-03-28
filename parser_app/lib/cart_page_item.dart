@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/cart.dart';
-import 'package:pki_frontend_app/resizer.dart';
-import 'package:pki_frontend_app/switch.dart';
-import 'package:pki_frontend_app/cart_page_item_amount.dart';
+import 'cart.dart';
+import 'resizer.dart';
+import 'switch.dart';
+import 'cart_page_item_amount.dart';
 
 
 class CartPageItem extends StatefulWidget {
@@ -100,7 +100,8 @@ class CartPageItemState extends State<CartPageItem> {
                 key: _switcherKey,
                 height: 17.75.h,
                 width: 35.5.w,
-                onPress: onPress
+                onPress: onPress,
+                animationName: "switch"
               ),
             ],
           )

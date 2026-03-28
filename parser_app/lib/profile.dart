@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
+import 'app_message_box.dart';
 import 'resizer.dart';
 import 'tint_container.dart';
 import 'admin.dart';
 
 class Profile extends StatefulWidget {
-  final VoidCallback logout;
-  const Profile({super.key, required this.logout});
+  final Function logout;
+  final double contentHeight;
+  const Profile({
+    super.key,
+    required this.logout,
+    required this.contentHeight
+  });
 
   @override
   State<Profile> createState() => ProfileState();
@@ -27,16 +33,23 @@ class ProfileState extends State<Profile> {
     });
   }
 
-  void getProfileData() {
-    setState(() {
-      Api.I.me().then((Map<String, dynamic> user) {
-        setState(() {
-          username = user['username'];
-          email = user['email'];
-          role = user['role'];
-        });
-      }).catchError((e) {});
-    });
+  Future<void> getProfileData() async {
+    try {
+      final user = await Api.I.me();
+      if (!mounted) return;
+      setState(() {
+        username = user['username'];
+        email = user['email'];
+        role = user['role'];
+      });
+    } catch (_) {
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
+    }
   }
 
   void openAdminPage() {
@@ -69,7 +82,7 @@ class ProfileState extends State<Profile> {
           left: _left + 20,
           child: Container(
             width: 350.w,
-            height: 600.h,
+            height: 635.h,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -107,7 +120,7 @@ class ProfileState extends State<Profile> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 380.h,),
+                    SizedBox(height: 415.h,),
                     TextButton(
                       onPressed: openAdminPage,
                       style: TextButton.styleFrom(
@@ -144,9 +157,11 @@ class ProfileState extends State<Profile> {
                     SizedBox(height: 10.h,),
                   ],
                 )
-                : SizedBox(height: 430.h,),
+                : SizedBox(height: 465.h,),
                 TextButton(
-                  onPressed: widget.logout,
+                  onPressed: () async {
+                    await widget.logout(context);
+                  },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -187,7 +202,7 @@ class ProfileState extends State<Profile> {
           gestureAction: () {
             closeAdminPage();
           },
-          height: 740.h,
+          height: widget.contentHeight,
           width: 390.w,
         ),
         Admin(key: _adminPageKey)

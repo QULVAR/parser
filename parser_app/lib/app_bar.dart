@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'resizer.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({

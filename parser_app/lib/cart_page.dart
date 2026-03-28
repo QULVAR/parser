@@ -1,13 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pki_frontend_app/auth.dart';
-import 'package:pki_frontend_app/calendar_pop_up.dart';
-import 'package:pki_frontend_app/cart.dart';
-import 'package:pki_frontend_app/cart_page_item.dart';
-import 'package:pki_frontend_app/date_picker_field.dart';
-import 'package:pki_frontend_app/discount_text_field.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'auth.dart';
+import 'calendar_pop_up.dart';
+import 'cart.dart';
+import 'cart_page_item.dart';
+import 'date_picker_field.dart';
+import 'app_message_box.dart';
+import 'discount_text_field.dart';
+import 'resizer.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -19,6 +20,7 @@ class CartPage extends StatefulWidget {
 class CartPageState extends State<CartPage> {
   double _left = 390.w;
   late List<List<String>> userCart;
+  double sumWithoutPromo = 0;
   double sum = 0;
 
   void updatePage() {setState(() {});}
@@ -48,20 +50,70 @@ class CartPageState extends State<CartPage> {
     return '${value.day}-${value.month}-${value.year}';
   }
 
-  Future<void> buttonPress() async {
+  Future<void> fileCreation() async {
     String promocode = (_discountTextFieldKey.currentState?.controller.text ?? '').trim();
-    final resp = await Api.I.getCost(
-      Cart.getCartRequest(),
-      convetationDateToString(_datePickerValue1),
-      convetationDateToString(_datePickerValue2),
-      promocode
+      await Api.I.getEstimate(
+        Cart.getCartRequest(),
+        convetationDateToString(_datePickerValue1),
+        convetationDateToString(_datePickerValue2),
+        promocode
+      );
+  }
+
+  Future<void> buttonExportPress() async {
+    await showAppMessageBox(
+      context,
+      title: "Смета",
+      message: "Создать смету?",
+      buttons: AppMessageBoxButtons.cancelOk,
+      onOk: () {
+        fileCreation();
+      },
     );
-    setState(() {
-      sum = resp['result'].toDouble();
-    });
-    if (resp['promo_status'] == 'promo_404') {
-      _discountTextFieldKey.currentState?.showMiniToast("Отсутствует");
+  }
+
+  Future<void> buttonCostPress() async {
+    try {
+      String promocode = (_discountTextFieldKey.currentState?.controller.text ?? '').trim();
+      final resp = await Api.I.getCost(
+        Cart.getCartRequest(),
+        convetationDateToString(_datePickerValue1),
+        convetationDateToString(_datePickerValue2),
+        promocode
+      );
+
+      if (!mounted) return;
+
+      if (resp['status'] == 'error') {
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+        return;
+      } else {
+        setState(() {
+          sum = resp['result'].toDouble();
+          sumWithoutPromo = resp['result_without_promo'].toDouble();
+          backgroundColorButtonExport = Color.fromARGB(150, 0, 158, 58);
+        });
+      }
+
+
+
+      if (resp['promo_status'] == 'promo_404') {
+        _discountTextFieldKey.currentState?.showMiniToast("Отсутствует");
+      }
+    } catch (_) {
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
     }
+
+
   }
 
   final _datePickerKey1 = GlobalKey<DatePickerFieldState>();
@@ -69,7 +121,8 @@ class CartPageState extends State<CartPage> {
   final _discountTextFieldKey = GlobalKey<DiscountTextFieldState>();
   DateTime? _datePickerValue1;
   DateTime? _datePickerValue2;
-  Color backgroundColorButton = Color(0xFFE6E6E6);
+  Color backgroundColorButtonCost = Color(0xFFE6E6E6);
+  Color backgroundColorButtonExport = Color(0xFFE6E6E6);
   Color fieldColor = Color(0xFFF5F5F5);
   String calendarIcon = 'calendar_icon';
 
@@ -84,7 +137,7 @@ class CartPageState extends State<CartPage> {
       _datePickerKey2.currentState?.clear();
       _datePickerValue1 = null;
       _datePickerValue2 = null;
-      backgroundColorButton = Color(0xFFE6E6E6);
+      backgroundColorButtonCost = Color(0xFFE6E6E6);
       fieldColor = Color(0xFFF5F5F5);
       calendarIcon = 'calendar_icon';
     });
@@ -120,9 +173,9 @@ class CartPageState extends State<CartPage> {
       fieldColorLocal = Color(0xFFF5F5F5);
       calendarIcon = 'calendar_icon';
     }
-    if (buttonColor != backgroundColorButton) {
+    if (buttonColor != backgroundColorButtonCost) {
       setState(() {
-        backgroundColorButton = buttonColor;
+        backgroundColorButtonCost = buttonColor;
       });
     }
     if (fieldColorLocal != fieldColor) {
@@ -197,7 +250,7 @@ class CartPageState extends State<CartPage> {
       left: _left + 20,
       child: Container(
         width: 350.w,
-        height: 700.h,
+        height: 635.h,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -270,7 +323,7 @@ class CartPageState extends State<CartPage> {
             ),
             SizedBox(height: 16.h,),
             Container(
-              height: 430.h,
+              height: 348.h,
               padding: EdgeInsets.only(left: 15.w),
               child: SingleChildScrollView(
                 child: Column(
@@ -301,7 +354,7 @@ class CartPageState extends State<CartPage> {
               ),
             ),
             Container(
-              height: 57.h,
+              height: 87.h,
               padding: EdgeInsets.only(top: 10.h, left: 15.w),
               child:Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -327,11 +380,33 @@ class CartPageState extends State<CartPage> {
                   ),
                   Row(
                     children: [
+                      Expanded(
+                      child: Text(
+                          'Всего без промокода: ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.sp,
+                          ),
+                        ),
+                      ),
                       Text(
-                        'Всего: ',
+                        '$sumWithoutPromo ₽',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16.sp,
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                      child: Text(
+                          'Всего: ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.sp,
+                          ),
                         ),
                       ),
                       Text(
@@ -348,9 +423,9 @@ class CartPageState extends State<CartPage> {
             ),
             TextButton(
               onPressed: () {
-                if (backgroundColorButton == Color.fromARGB(150, 0, 158, 58)) {
+                if (backgroundColorButtonCost == Color.fromARGB(150, 0, 158, 58)) {
                   FocusScope.of(context).unfocus();
-                  buttonPress();
+                  buttonCostPress();
                 }
               },
               style: TextButton.styleFrom(
@@ -368,11 +443,51 @@ class CartPageState extends State<CartPage> {
                 height: 44.h,
                 padding: EdgeInsets.only(top: 12.h, bottom: 12.h),
                 decoration: BoxDecoration(
-                  color: backgroundColorButton,
+                  color: backgroundColorButtonCost,
                   borderRadius: BorderRadius.circular(10.sp)
                 ),
                 child: Text(
                   'Рассчитать',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.sp,
+                    fontStyle: FontStyle.normal,
+                    height: 1.25,
+                    letterSpacing: 0.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 8.h,),
+            TextButton(
+              onPressed: () {
+                if (backgroundColorButtonExport == Color.fromARGB(150, 0, 158, 58)) {
+                  FocusScope.of(context).unfocus();
+                  buttonExportPress();
+                }
+              },
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                minimumSize: Size(342.w, 44.h),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                backgroundColor: Colors.transparent,
+                foregroundColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
+              ),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                width: 342.w,
+                height: 44.h,
+                padding: EdgeInsets.only(top: 12.h, bottom: 12.h),
+                decoration: BoxDecoration(
+                  color: backgroundColorButtonExport,
+                  borderRadius: BorderRadius.circular(10.sp)
+                ),
+                child: Text(
+                  'Экспорт',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,

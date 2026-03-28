@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'resizer.dart';
 import 'enroll_category_field.dart';
 
 class EnrollCategory extends StatefulWidget {

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/cart.dart';
-import 'package:pki_frontend_app/cart_page.dart';
-import 'package:pki_frontend_app/catalog.dart';
-import 'package:pki_frontend_app/profile.dart';
-import 'package:pki_frontend_app/resizer.dart';
-import 'package:pki_frontend_app/tint_container.dart';
+import 'package:flutter/foundation.dart';
+import 'cart.dart';
+import 'cart_page.dart';
+import 'catalog.dart';
+import 'profile.dart';
+import 'resizer.dart';
+import 'tint_container.dart';
 import 'app_bar.dart';
 
 class HomePage extends StatefulWidget {
-  final VoidCallback logout;
+  final Function logout;
   final double top;
   const HomePage({super.key, required this.top, required this.logout});
 
@@ -83,6 +84,7 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final double contentHeight = kIsWeb ? 774.h : 740.h;
     return Stack(
       children: [
         AnimatedPositioned(
@@ -105,16 +107,23 @@ class HomePageState extends State<HomePage> {
                 ),
                 child: Stack(
                   children:[
-                    Catalog(key: _catalogPageKey),
+                    Catalog(
+                      key: _catalogPageKey,
+                      contentHeight: contentHeight,
+                    ),
                     TintContainer(
                       key: _tintPageKey1,
                       gestureAction: () {
                         changePage(0);
                       },
-                      height: 740.h,
+                      height: contentHeight,
                       width: 390.w,
                     ),
-                    Profile(key: _profilePageKey, logout: widget.logout,),
+                    Profile(
+                      key: _profilePageKey,
+                      logout: widget.logout,
+                      contentHeight: contentHeight,
+                    ),
                     CartPage(key: _cartPageKey)
                   ]
                 ),

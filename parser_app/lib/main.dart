@@ -6,6 +6,7 @@ import 'resizer.dart';
 import 'login.dart';
 import 'main_page.dart';
 import 'auth.dart';
+import 'app_message_box.dart';
 
 Future<bool> _bootstrapAuth() async {
   try {
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _authorized = widget.startLogin;
     _pages = [
-      HomePage(key: _homePageKey, top: 844, logout: _logout),
+      HomePage(key: _homePageKey, top: 844, logout: logout),
       LoginPage(key: _loginPageKey, authorize: authorize),
     ];
 
@@ -54,10 +55,25 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  Future<void> logout(BuildContext context) async {
+    await showAppMessageBox(
+      context,
+      title: "Выход",
+      message: "Вы точно хотите выйти?",
+      buttons: AppMessageBoxButtons.cancelOk,
+      onOk: () {
+        _logout();
+      },
+    );
+  }
+
   void _logout() {
     _homePageKey.currentState?.moveToY(-844);
     _loginPageKey.currentState?.moveToY(0);
     _homePageKey.currentState?.clear();
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      _homePageKey.currentState?.changePage(0);
+    });
     Api.I.logout();
     setState(() {
       _authorized = false;
@@ -76,7 +92,12 @@ class _MyAppState extends State<MyApp> {
       });
       _loginPageKey.currentState?.clear();
     } else {
-      print('Неверный логин/пароль');
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Неверный логин или пароль',
+      );
     }
   }
 

@@ -44,7 +44,7 @@ class LoginFormState extends State<LoginForm> {
     isFormValid = _email != '' && _password != '';
     if (isFormValid) {
       setState(() {
-        backgroundButtonColor = Color(0xFF4DABEE);
+        backgroundButtonColor = Color.fromARGB(150, 0, 158, 58);
       });
     }
     else {

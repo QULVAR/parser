@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:pki_frontend_app/resizer.dart';
+import 'resizer.dart';
+import 'app_message_box.dart';
 import 'catalog_list_view_builder.dart';
 import 'cart.dart';
 import 'auth.dart';
 
 class Catalog extends StatefulWidget {
-  const Catalog({super.key});
+  final double contentHeight;
+  const Catalog({super.key, required this.contentHeight});
 
   @override
   State<Catalog> createState() => CatalogState();
@@ -35,26 +37,46 @@ class CatalogState extends State<Catalog> {
       _text = 'Загрузка...';
     });
 
-    final resp = await Api.I.authedGet('/api/get_goods/');
+    try {
+      final resp = await Api.I.authedGet('/api/get_goods/');
 
-    if (token != _reqToken) return;
-    if (resp.statusCode == 401) {
+      if (token != _reqToken) return;
+      if (resp.statusCode == 401) {
+        setState(() {
+          _text = 'Нужно войти, дружок-пирожок';
+        });
+        return;
+      }
+      if (resp.statusCode == 200) {
+        final dataLocal = jsonDecode(resp.body);
+        setState(() {
+          data = dataLocal;
+          _text = '';
+        });
+      } else {
+        setState(() {
+          _text = '';
+          data = {};
+        });
+        if (!mounted) return;
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+      }
+    } catch (_) {
+      if (token != _reqToken) return;
       setState(() {
-        _text = 'Нужно войти, дружок-пирожок';
-      });
-      return;
-    }
-    if (resp.statusCode == 200) {
-      final dataLocal = jsonDecode(resp.body);
-      setState(() {
-        data = dataLocal;
         _text = '';
-      });
-    } else {
-      setState(() {
-        _text = 'Ошибка: ${resp.statusCode}';
         data = {};
       });
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
     }
   }
 
@@ -64,27 +86,47 @@ class CatalogState extends State<Catalog> {
       _text = 'Загрузка...';
     });
 
-    final resp = await Api.I.authedGet('/api/search/', query: {'query': q});
+    try {
+      final resp = await Api.I.authedGet('/api/search/', query: {'query': q});
 
-    if (token != _reqToken) return;
+      if (token != _reqToken) return;
 
-    if (resp.statusCode == 401) {
+      if (resp.statusCode == 401) {
+        setState(() {
+          _text = 'Нужно войти';
+        });
+        return;
+      }
+      if (resp.statusCode == 200) {
+        final dataLocal = jsonDecode(resp.body);
+        setState(() {
+          data = dataLocal;
+          _text = '';
+        });
+      } else {
+        setState(() {
+          _text = '';
+          data = {};
+        });
+        if (!mounted) return;
+        await showAppMessageBox(
+          context,
+          title: 'Ошибка',
+          message: 'Произошла ошибка',
+        );
+      }
+    } catch (_) {
+      if (token != _reqToken) return;
       setState(() {
-        _text = 'Нужно войти';
-      });
-      return;
-    }
-    if (resp.statusCode == 200) {
-      final dataLocal = jsonDecode(resp.body);
-      setState(() {
-        data = dataLocal;
         _text = '';
-      });
-    } else {
-      setState(() {
-        _text = 'Ошибка: ${resp.statusCode}';
         data = {};
       });
+      if (!mounted) return;
+      await showAppMessageBox(
+        context,
+        title: 'Ошибка',
+        message: 'Произошла ошибка',
+      );
     }
   }
 
@@ -108,6 +150,7 @@ class CatalogState extends State<Catalog> {
 
   @override
   Widget build(BuildContext context) {
+    final double listHeight = widget.contentHeight - 50.h;
     return AnimatedPositioned(
       duration: Duration(milliseconds: 300),
       curve: Curves.easeInCirc,
@@ -115,7 +158,7 @@ class CatalogState extends State<Catalog> {
       left: _left,
       child: Container(
         width: 390.w,
-        height: 844.h,
+        height: widget.contentHeight,
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
           children: [
@@ -151,7 +194,7 @@ class CatalogState extends State<Catalog> {
                 borderRadius: BorderRadius.circular(10.sp),
               ),
               margin: EdgeInsets.only(top: 10.h, bottom: 0.h),
-              height: 656.h,
+              height: listHeight,
               child: _text == ''
                   ? CatalogListViewBuilder(
                     key: _catalogListViewBuilderKey,
